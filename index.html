@@ -319,6 +319,280 @@
         border:1px solid rgba(0,0,0,.16);
       }
 
+
+      /* =========================
+         DÜZELTİLMİŞ CANLI ALBÜM
+      ========================= */
+
+      .album-preview{
+        --album-cover:#efe3d0;
+        --album-page:#fffaf2;
+        --album-edge:#d8c2a7;
+        position:relative;
+        min-height:650px;
+        padding:clamp(22px,4vw,46px);
+        border:1px solid var(--line);
+        border-radius:38px;
+        background:
+          radial-gradient(circle at 85% 12%,rgba(185,148,93,.16),transparent 28%),
+          linear-gradient(145deg,#fffdf9,#f2e6d7);
+        box-shadow:var(--shadow);
+        overflow:hidden;
+        transition:background .35s ease;
+      }
+
+      .album-preview.cover-krem{--album-cover:#efe3d0;--album-page:#fffaf2;--album-edge:#d8c2a7}
+      .album-preview.cover-bej{--album-cover:#c8aa83;--album-page:#fff6e9;--album-edge:#9d7c55}
+      .album-preview.cover-antrasit{--album-cover:#3a3a3d;--album-page:#f2f0ec;--album-edge:#232326}
+      .album-preview.cover-acikgri{--album-cover:#d9d9d9;--album-page:#fafafa;--album-edge:#bdbdbd}
+      .album-preview.cover-beyaz{--album-cover:#ffffff;--album-page:#fffdf8;--album-edge:#dddddd}
+      .album-preview.cover-koyu{--album-cover:#1f1b18;--album-page:#f2ede5;--album-edge:#0f0d0b}
+      .album-preview.cover-turkuaz{--album-cover:#5f9f98;--album-page:#f2fbf9;--album-edge:#3e6f69}
+
+      .album-color-panel{
+        position:relative;
+        z-index:8;
+        width:min(840px,100%);
+        margin:0 auto 22px;
+        padding:14px;
+        border:1px solid var(--line);
+        border-radius:999px;
+        background:rgba(255,253,249,.88);
+        backdrop-filter:blur(14px);
+        box-shadow:0 16px 42px rgba(70,50,32,.10);
+      }
+
+      .album-colors{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        justify-content:center;
+      }
+
+      .album-color{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:9px 14px;
+        border-radius:999px;
+        border:1px solid rgba(0,0,0,.08);
+        background:#fff;
+        cursor:pointer;
+        font-weight:700;
+        color:var(--muted);
+        transition:.25s ease;
+      }
+
+      .album-color:hover{transform:translateY(-2px)}
+      .album-color.active{
+        border-color:#b9945d;
+        color:var(--ink);
+        box-shadow:0 8px 22px rgba(0,0,0,.08);
+        background:#fffaf1;
+      }
+
+      .album-color::before{
+        content:"";
+        width:18px;
+        height:18px;
+        border-radius:50%;
+        background:var(--cover-color);
+        border:1px solid rgba(0,0,0,.16);
+      }
+
+      .book-scene{
+        position:relative;
+        z-index:2;
+        display:grid;
+        align-items:center;
+        min-height:480px;
+        perspective:1600px;
+      }
+
+      .memory-book{
+        position:relative;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        min-height:430px;
+        border-radius:24px;
+        background:
+          linear-gradient(90deg,var(--album-cover),var(--album-page) 15%,var(--album-page) 85%,var(--album-cover)) !important;
+        border:14px solid var(--album-cover) !important;
+        box-shadow:
+          0 28px 80px rgba(70,50,32,.24),
+          inset 0 0 0 1px rgba(255,255,255,.28) !important;
+        transform:rotate(-2deg);
+        overflow:hidden;
+        transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;
+      }
+
+      .memory-book::before{
+        content:"";
+        position:absolute;
+        inset:0 50% 0 auto;
+        width:24px;
+        background:linear-gradient(90deg,rgba(70,50,32,.22),rgba(255,255,255,.7),rgba(70,50,32,.16));
+        transform:translateX(50%);
+        z-index:6;
+      }
+
+      .memory-book::after{
+        content:"FM MOMENTS";
+        position:absolute;
+        right:28px;
+        bottom:18px;
+        z-index:8;
+        color:rgba(185,148,93,.25);
+        font-family:Georgia,"Times New Roman",serif;
+        font-size:clamp(1.7rem,4vw,3.3rem);
+        letter-spacing:.08em;
+      }
+
+      .book-page{
+        position:relative;
+        padding:26px;
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.07),transparent 12%),
+          var(--album-page) !important;
+        overflow:hidden;
+      }
+
+      .book-page.right{
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.10),transparent 16%),
+          var(--album-page) !important;
+      }
+
+      .book-page::after{
+        content:"";
+        position:absolute;
+        inset:14px;
+        border:1px solid rgba(185,148,93,.14);
+        border-radius:16px;
+        pointer-events:none;
+      }
+
+      .album-photo{
+        position:relative;
+        z-index:2;
+        border:10px solid rgba(255,255,255,.88);
+        background:#f8efe4;
+        box-shadow:0 14px 30px rgba(70,50,32,.12);
+        overflow:hidden;
+      }
+
+      .album-photo img{
+        width:100%;
+        height:100%;
+        object-fit:contain !important;
+        background:#f8efe4;
+      }
+
+      .album-photo-main{
+        height:220px;
+        transform:rotate(-1.3deg);
+      }
+
+      .album-photo-row{
+        position:relative;
+        z-index:2;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:14px;
+        margin-top:16px;
+      }
+
+      .album-photo-small{
+        height:120px;
+      }
+
+      .album-photo-small:first-child{transform:rotate(1.8deg)}
+      .album-photo-small:last-child{transform:rotate(-1.8deg)}
+
+      .album-photo-tall{
+        height:315px;
+        transform:rotate(1.1deg);
+      }
+
+      .album-page-note{
+        position:relative;
+        z-index:3;
+        margin-top:16px;
+        padding:14px;
+        border-radius:18px;
+        background:rgba(255,253,249,.78);
+        border:1px solid rgba(185,148,93,.18);
+      }
+
+      .album-page-note strong{
+        display:block;
+        font-family:Georgia,"Times New Roman",serif;
+        font-size:1.2rem;
+        font-weight:500;
+      }
+
+      .album-page-note span{
+        display:block;
+        margin-top:6px;
+        color:var(--muted);
+        line-height:1.55;
+        font-size:.9rem;
+      }
+
+      .album-caption{
+        position:relative;
+        z-index:7;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:16px;
+        margin:20px auto 0;
+        width:min(760px,100%);
+        padding:14px 18px;
+        border:1px solid rgba(185,148,93,.18);
+        border-radius:999px;
+        background:rgba(255,253,249,.86);
+        backdrop-filter:blur(12px);
+        box-shadow:0 16px 42px rgba(70,50,32,.12);
+      }
+
+      .album-caption strong{
+        font-family:Georgia,"Times New Roman",serif;
+        font-size:1.05rem;
+        font-weight:500;
+      }
+
+      .album-caption span{
+        color:var(--muted);
+        font-size:.9rem;
+      }
+
+      @media (max-width:780px){
+        .album-color-panel{border-radius:24px}
+        .memory-book{
+          grid-template-columns:1fr;
+          transform:rotate(-1deg);
+        }
+        .memory-book::before{display:none}
+        .book-page.right{display:block}
+        .album-photo-main,.album-photo-tall{height:240px}
+        .album-caption{
+          align-items:flex-start;
+          flex-direction:column;
+          border-radius:24px;
+        }
+      }
+
+      @media (max-width:540px){
+        .album-preview{min-height:auto}
+        .book-scene{min-height:auto}
+        .memory-book{min-height:auto}
+        .book-page{padding:18px}
+        .album-photo{border-width:7px}
+        .album-photo-main,.album-photo-tall{height:220px}
+        .album-photo-small{height:110px}
+      }
+
       .process-grid{grid-template-columns:repeat(4,1fr)}
       .process-card{padding:25px}
       .process-card span{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:18px;border-radius:50%;color:var(--paper);background:var(--ink);letter-spacing:0}
@@ -466,33 +740,64 @@
       <section class="section soft-section" id="album">
         <div class="section-heading reveal">
           <p class="eyebrow">Albüm Kitabı</p>
-          <h2>Anılarınız sayfa sayfa yaşayan bir albüme dönüşsün.</h2>
-          <p>Fotoğraflarınız, eski bir hatıra defterinin sayfalarında gezinir gibi sade ve sıcak bir albüm içinde akar. Her sayfa; bir bakış, bir gülümseme, bir dokunuş ve yıllar sonra yeniden hatırlanacak küçük bir hikâye taşır.</p>
+          <h2>Anılarınız eski bir hatıra kitabı gibi saklansın.</h2>
+          <p>Seçilen kareler, sade ve zarif bir açık albüm düzeninde sunulur. Fotoğraflar sayfalar içinde doğal oranlarını koruyarak yer alır; albüm kapağı ise seçilen renge göre değişir.</p>
         </div>
+
         <div class="album-layout">
           <article class="album-copy-card reveal">
-            <p class="tag">Yaşayan Albüm</p>
-            <h3>Bir fotoğraf değil, hissi kalan bir hikâye.</h3>
-            <p>Albüm tasarımı; fotoğrafları sıkıştırmadan, nefes alan beyaz sayfalar ve yumuşak gölgelerle sunar. Kareler kitabın içinde sakin şekilde değişir; bebek, aile, portre ve doğal anlar aynı zarif akışta buluşur.</p>
-            <div class="album-poem">Sayfalar çevrildikçe anılar yeniden canlanır.</div>
-            <p class="album-small-note">Kapak rengi çekimin ruhuna göre seçilebilir: sıcak kahve, sade krem, doğal bej veya zamansız siyah.</p>
+            <p class="tag">Hatıra Albümü</p>
+            <h3>Her sayfa bir anıyı hissettirsin.</h3>
+            <p>Albüm tasarımında fotoğrafları sıkıştırmadan, nefes alan boşluklar ve yumuşak sayfa dokusu kullanılır. Amaç; fotoğrafları sadece göstermek değil, onları dokunulabilir bir hatıraya dönüştürmektir.</p>
+            <ul>
+              <li>Fotoğraflar albüm sayfasına sığacak şekilde yerleşir</li>
+              <li>Kapak rengi seçime göre değişir</li>
+              <li>Sade, şık ve zamansız bir hatıra kitabı hissi verir</li>
+            </ul>
           </article>
-          <div class="album-preview reveal cover-krem" aria-label="Kayan açık albüm kitabı">
-            <div class="album-colors" aria-label="Albüm kapak renkleri">
-              <button class="album-color krem active" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
+
+          <div class="album-preview reveal cover-krem" aria-label="Açık albüm kitabı">
+            <div class="album-color-panel">
+              <div class="album-colors" aria-label="Albüm kapak renkleri">
+                <button class="album-color krem active" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
                 <button class="album-color bej" type="button" data-cover="bej" style="--cover-color:#c8aa83">Bej</button>
                 <button class="album-color antrasit" type="button" data-cover="antrasit" style="--cover-color:#3a3a3d">Antrasit</button>
                 <button class="album-color acikgri" type="button" data-cover="acikgri" style="--cover-color:#d9d9d9">Açık Gri</button>
                 <button class="album-color beyaz" type="button" data-cover="beyaz" style="--cover-color:#ffffff">Beyaz</button>
                 <button class="album-color koyu" type="button" data-cover="koyu" style="--cover-color:#1f1b18">Koyu</button>
                 <button class="album-color turkuaz" type="button" data-cover="turkuaz" style="--cover-color:#5f9f98">Turkuaz Yeşil</button>
+              </div>
             </div>
-            <span class="album-note">Hatıra Albümü</span>
+
             <div class="book-scene">
-              <div class="memory-book" id="memoryBook" aria-live="polite"></div>
+              <div class="memory-book" id="memoryBook">
+                <div class="book-page left">
+                  <div class="album-photo album-photo-main">
+                    <img id="albumImg1" src="./10df2283-33fd-487b-8bbb-9202019a42f9.jpg" alt="Albüm fotoğrafı">
+                  </div>
+                  <div class="album-photo-row">
+                    <div class="album-photo album-photo-small">
+                      <img id="albumImg2" src="./51ee664c-a8f0-4af0-8b2e-615e03f44ce3.jpg" alt="Albüm fotoğrafı">
+                    </div>
+                    <div class="album-photo album-photo-small">
+                      <img id="albumImg3" src="./fe65f183-e9c3-4a07-80ce-e2682472b596.jpg" alt="Albüm fotoğrafı">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="book-page right">
+                  <div class="album-photo album-photo-tall">
+                    <img id="albumImg4" src="./e9290b2e-32f4-4b16-870c-1d6f8d5a1962.jpg" alt="Albüm fotoğrafı">
+                  </div>
+                  <div class="album-page-note">
+                    <strong id="albumTitle">FM Moments Albüm</strong>
+                    <span id="albumText">Fotoğraflar albüm içinde sade bir hikâye gibi akar.</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="album-dots" id="albumDots" aria-label="Albüm sayfa göstergeleri"></div>
-            <div class="album-caption" id="albumCaption">
+
+            <div class="album-caption">
               <strong>FM Moments Albüm</strong>
               <span>Fotoğraflar albüm içinde akar</span>
             </div>
@@ -585,56 +890,6 @@
 
       const filterButtons=document.querySelectorAll(".filter-btn");
       const photoCards=[...document.querySelectorAll(".photo-card")];
-      const memoryBook=document.querySelector("#memoryBook");
-      const albumDots=document.querySelector("#albumDots");
-      const albumCaption=document.querySelector("#albumCaption");
-      const albumItems=photoCards.map((card)=>({
-        src:card.querySelector("img").getAttribute("src"),
-        alt:card.querySelector("img").getAttribute("alt"),
-        title:card.querySelector("button").dataset.title,
-        category:card.querySelector("button").dataset.category
-      }));
-      const albumPages=[];
-      for(let index=0;index<albumItems.length;index+=4){
-        albumPages.push(albumItems.slice(index,index+4));
-      }
-      let activeAlbumPage=0;
-      let albumTimer;
-
-      const renderAlbumPage=(pageIndex)=>{
-        if(!memoryBook||!albumDots||!albumCaption||!albumPages.length) return;
-        activeAlbumPage=(pageIndex+albumPages.length)%albumPages.length;
-        const page=albumPages[activeAlbumPage];
-        const leftPhotos=[page[0],page[1],page[2]].filter(Boolean);
-        const featured=page[3]||page[0];
-
-        memoryBook.innerHTML=`
-          <div class="album-slide active">
-            <div class="book-page left">
-              <div class="page-grid">
-                ${leftPhotos.map((item)=>`<div class="page-photo"><img src="${item.src}" alt="${item.alt}" loading="lazy" /></div>`).join("")}
-              </div>
-            </div>
-            <div class="book-page right">
-              <div class="featured-print"><img src="${featured.src}" alt="${featured.alt}" loading="lazy" /></div>
-            </div>
-          </div>
-        `;
-        albumDots.innerHTML=albumPages.map((_,index)=>`<button class="album-dot ${index===activeAlbumPage?"active":""}" type="button" aria-label="${index+1}. albüm sayfası" data-page="${index}"></button>`).join("");
-        albumCaption.querySelector("strong").textContent=featured.title;
-        albumCaption.querySelector("span").textContent=`${featured.category} • Albüm sayfasında saklanan anı`;
-      };
-
-      const startAlbumTimer=()=>{
-        if(albumTimer) window.clearInterval(albumTimer);
-        albumTimer=window.setInterval(()=>renderAlbumPage(activeAlbumPage+1),4200);
-      };
-
-      albumDots?.addEventListener("click",(event)=>{
-        const dot=event.target.closest(".album-dot");
-        if(!dot) return;
-        renderAlbumPage(Number(dot.dataset.page));
-        startAlbumTimer();
       });
 
       document.querySelectorAll(".album-color").forEach((button)=>{
@@ -703,10 +958,11 @@
         if(event.key==="ArrowRight") showLightboxItem(1);
       });
       });
+      });
 
 
       /* =========================
-         ALBÜM RENK DEĞİŞİMİ
+         ALBÜM RENKLERİ VE FOTO AKIŞI
       ========================= */
       const albumPreviewBox=document.querySelector(".album-preview");
       const albumColorButtons=document.querySelectorAll(".album-color");
@@ -729,6 +985,68 @@
           albumPreviewBox?.classList.add(`cover-${button.dataset.cover}`);
         });
       });
+
+      const albumSets=[
+        {
+          title:"Yenidoğan Anı",
+          text:"Sade ışık ve yumuşak tonlarla hatıra albümüne taşınan bebek kareleri.",
+          photos:[
+            "./10df2283-33fd-487b-8bbb-9202019a42f9.jpg",
+            "./51ee664c-a8f0-4af0-8b2e-615e03f44ce3.jpg",
+            "./fe65f183-e9c3-4a07-80ce-e2682472b596.jpg",
+            "./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg"
+          ]
+        },
+        {
+          title:"Çift Anısı",
+          text:"Birlikte paylaşılan anlar, doğal ve zamansız albüm sayfalarında saklanır.",
+          photos:[
+            "./e9290b2e-32f4-4b16-870c-1d6f8d5a1962.jpg",
+            "./fd91cf2a-3ab2-4270-b569-9f8b537a8cf3.jpg",
+            "./9ad51b07-add3-4f42-b2c5-0cc539ca0966.jpg",
+            "./df215954-62d3-4790-9102-37a2a3988589.jpg"
+          ]
+        },
+        {
+          title:"Portre Seçkisi",
+          text:"Portre fotoğrafları ferah boşluklarla, sade ve güçlü bir albüm diliyle sunulur.",
+          photos:[
+            "./8a77aa72-cd5e-4210-b1e4-4bd69930c00f.jpg",
+            "./5a4979c3-d2b7-4dbc-8094-0a99b01c2481.jpg",
+            "./7706e214-9592-45d0-9d80-50e50eff07e0.jpg",
+            "./e48cdbd6-58ac-405f-9a82-e0c746b01a86.jpg"
+          ]
+        }
+      ];
+
+      const albumImgs=[
+        document.querySelector("#albumImg1"),
+        document.querySelector("#albumImg2"),
+        document.querySelector("#albumImg3"),
+        document.querySelector("#albumImg4")
+      ];
+      const albumTitle=document.querySelector("#albumTitle");
+      const albumText=document.querySelector("#albumText");
+      let albumSetIndex=0;
+
+      const updateAlbumPhotos=()=>{
+        const set=albumSets[albumSetIndex];
+        albumImgs.forEach((img,index)=>{
+          if(img && set.photos[index]){
+            img.src=set.photos[index];
+          }
+        });
+        if(albumTitle) albumTitle.textContent=set.title;
+        if(albumText) albumText.textContent=set.text;
+      };
+
+      window.setInterval(()=>{
+        albumSetIndex=(albumSetIndex+1)%albumSets.length;
+        updateAlbumPhotos();
+      },4200);
+
+      updateAlbumPhotos();
+
 
       const revealItems=document.querySelectorAll(".reveal");
       const observer=new IntersectionObserver((entries)=>{
