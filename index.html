@@ -192,6 +192,133 @@
         pointer-events:none;
       }
 
+
+      /* =========================
+         ALBÜM RENK TEMALARI
+      ========================= */
+      .album-preview{
+        --album-cover:#efe3d0;
+        --album-page:#fffaf2;
+        --album-edge:#d8c2a7;
+        transition:background .35s ease;
+      }
+
+      .album-preview.cover-krem{
+        --album-cover:#efe3d0;
+        --album-page:#fffaf2;
+        --album-edge:#d8c2a7;
+      }
+
+      .album-preview.cover-bej{
+        --album-cover:#c8aa83;
+        --album-page:#fff6e9;
+        --album-edge:#9d7c55;
+      }
+
+      .album-preview.cover-antrasit{
+        --album-cover:#3a3a3d;
+        --album-page:#f2f0ec;
+        --album-edge:#232326;
+      }
+
+      .album-preview.cover-acikgri{
+        --album-cover:#d9d9d9;
+        --album-page:#fafafa;
+        --album-edge:#bdbdbd;
+      }
+
+      .album-preview.cover-beyaz{
+        --album-cover:#ffffff;
+        --album-page:#fffdf8;
+        --album-edge:#dddddd;
+      }
+
+      .album-preview.cover-koyu{
+        --album-cover:#1f1b18;
+        --album-page:#f2ede5;
+        --album-edge:#0f0d0b;
+      }
+
+      .album-preview.cover-turkuaz{
+        --album-cover:#5f9f98;
+        --album-page:#f2fbf9;
+        --album-edge:#3e6f69;
+      }
+
+      .album-preview.cover-krem .memory-book,
+      .album-preview.cover-bej .memory-book,
+      .album-preview.cover-antrasit .memory-book,
+      .album-preview.cover-acikgri .memory-book,
+      .album-preview.cover-beyaz .memory-book,
+      .album-preview.cover-koyu .memory-book,
+      .album-preview.cover-turkuaz .memory-book{
+        background:
+          linear-gradient(90deg,var(--album-cover),var(--album-page) 15%,var(--album-page) 85%,var(--album-cover)) !important;
+        border:14px solid var(--album-cover) !important;
+        box-shadow:
+          0 28px 80px rgba(70,50,32,.24),
+          inset 0 0 0 1px rgba(255,255,255,.28) !important;
+        transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;
+      }
+
+      .album-preview.cover-krem .book-page,
+      .album-preview.cover-bej .book-page,
+      .album-preview.cover-antrasit .book-page,
+      .album-preview.cover-acikgri .book-page,
+      .album-preview.cover-beyaz .book-page,
+      .album-preview.cover-koyu .book-page,
+      .album-preview.cover-turkuaz .book-page{
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.07),transparent 12%),
+          var(--album-page) !important;
+      }
+
+      .album-preview.cover-krem .book-page.right,
+      .album-preview.cover-bej .book-page.right,
+      .album-preview.cover-antrasit .book-page.right,
+      .album-preview.cover-acikgri .book-page.right,
+      .album-preview.cover-beyaz .book-page.right,
+      .album-preview.cover-koyu .book-page.right,
+      .album-preview.cover-turkuaz .book-page.right{
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.10),transparent 16%),
+          var(--album-page) !important;
+      }
+
+      .album-color{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:9px 14px;
+        border-radius:999px;
+        border:1px solid rgba(0,0,0,.08);
+        background:#fff;
+        cursor:pointer;
+        font-weight:700;
+        color:var(--muted);
+        transition:.25s ease;
+      }
+
+      .album-color:hover{
+        transform:translateY(-2px);
+      }
+
+      .album-color.active{
+        border-color:#b9945d;
+        color:var(--ink);
+        box-shadow:0 8px 22px rgba(0,0,0,.08);
+        background:#fffaf1;
+      }
+
+      .album-color::before{
+        content:"";
+        width:18px;
+        height:18px;
+        border-radius:50%;
+        background:var(--cover-color);
+        border:1px solid rgba(0,0,0,.16);
+      }
+
       .process-grid{grid-template-columns:repeat(4,1fr)}
       .process-card{padding:25px}
       .process-card span{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:18px;border-radius:50%;color:var(--paper);background:var(--ink);letter-spacing:0}
@@ -350,12 +477,15 @@
             <div class="album-poem">Sayfalar çevrildikçe anılar yeniden canlanır.</div>
             <p class="album-small-note">Kapak rengi çekimin ruhuna göre seçilebilir: sıcak kahve, sade krem, doğal bej veya zamansız siyah.</p>
           </article>
-          <div class="album-preview reveal cover-kahve" aria-label="Kayan açık albüm kitabı">
+          <div class="album-preview reveal cover-krem" aria-label="Kayan açık albüm kitabı">
             <div class="album-colors" aria-label="Albüm kapak renkleri">
-              <button class="album-color active" type="button" data-cover="kahve" style="--cover-color:#8a5a35">Kahve</button>
-              <button class="album-color" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
-              <button class="album-color" type="button" data-cover="bej" style="--cover-color:#c8aa83">Bej</button>
-              <button class="album-color" type="button" data-cover="siyah" style="--cover-color:#24211f">Siyah</button>
+              <button class="album-color krem active" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
+                <button class="album-color bej" type="button" data-cover="bej" style="--cover-color:#c8aa83">Bej</button>
+                <button class="album-color antrasit" type="button" data-cover="antrasit" style="--cover-color:#3a3a3d">Antrasit</button>
+                <button class="album-color acikgri" type="button" data-cover="acikgri" style="--cover-color:#d9d9d9">Açık Gri</button>
+                <button class="album-color beyaz" type="button" data-cover="beyaz" style="--cover-color:#ffffff">Beyaz</button>
+                <button class="album-color koyu" type="button" data-cover="koyu" style="--cover-color:#1f1b18">Koyu</button>
+                <button class="album-color turkuaz" type="button" data-cover="turkuaz" style="--cover-color:#5f9f98">Turkuaz Yeşil</button>
             </div>
             <span class="album-note">Hatıra Albümü</span>
             <div class="book-scene">
@@ -572,16 +702,30 @@
         if(event.key==="ArrowLeft") showLightboxItem(-1);
         if(event.key==="ArrowRight") showLightboxItem(1);
       });
+      });
 
 
+      /* =========================
+         ALBÜM RENK DEĞİŞİMİ
+      ========================= */
       const albumPreviewBox=document.querySelector(".album-preview");
       const albumColorButtons=document.querySelectorAll(".album-color");
+
       albumColorButtons.forEach((button)=>{
         button.addEventListener("click",()=>{
           albumColorButtons.forEach((item)=>item.classList.remove("active"));
           button.classList.add("active");
 
-          albumPreviewBox?.classList.remove("cover-kahve","cover-krem","cover-bej","cover-siyah");
+          albumPreviewBox?.classList.remove(
+            "cover-krem",
+            "cover-bej",
+            "cover-antrasit",
+            "cover-acikgri",
+            "cover-beyaz",
+            "cover-koyu",
+            "cover-turkuaz"
+          );
+
           albumPreviewBox?.classList.add(`cover-${button.dataset.cover}`);
         });
       });
