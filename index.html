@@ -84,35 +84,45 @@
       .portfolio-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;max-width:1120px;margin:28px auto 0;padding:24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,249,.78);box-shadow:0 18px 54px rgba(70,50,32,.08)}
       .portfolio-cta p{margin:0;color:var(--muted);line-height:1.7}
 
-      .album-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(28px,5vw,68px);align-items:center}
-      .album-copy-card{padding:clamp(28px,4vw,44px);border:1px solid var(--line);border-radius:34px;background:rgba(255,253,249,.8);box-shadow:0 18px 54px rgba(70,50,32,.08)}
-      .album-copy-card p,.album-copy-card li{color:var(--muted);line-height:1.75}
-      .album-copy-card ul{padding-left:20px;margin:22px 0 0}
-      .album-preview{position:relative;min-height:600px;padding:clamp(22px,4vw,46px);border:1px solid var(--line);border-radius:38px;background:radial-gradient(circle at 85% 12%,rgba(185,148,93,.16),transparent 28%),linear-gradient(145deg,#fffdf9,#f2e6d7);box-shadow:var(--shadow);overflow:hidden}
-      .album-preview::before{content:"";position:absolute;inset:auto 7% 8% 13%;height:26%;border-radius:50%;background:rgba(70,50,32,.16);filter:blur(18px);transform:rotate(-3deg)}
-      .book-scene{position:relative;z-index:2;display:grid;align-items:center;min-height:500px;perspective:1600px}
-      .memory-book{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:390px;border-radius:20px;background:#fbf6ed;box-shadow:0 28px 80px rgba(70,50,32,.22);transform:rotate(-3deg);overflow:hidden}
-      .memory-book::before{content:"";position:absolute;inset:0 50% 0 auto;width:22px;background:linear-gradient(90deg,rgba(70,50,32,.18),rgba(255,255,255,.6),rgba(70,50,32,.14));transform:translateX(50%);z-index:3}
-      .memory-book::after{content:"FM Moments";position:absolute;right:24px;bottom:18px;color:rgba(185,148,93,.42);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.6rem,4vw,3.2rem);letter-spacing:.08em;text-transform:uppercase;z-index:4}
-      .book-page{position:relative;padding:26px;background:linear-gradient(90deg,#fffdf8,#f7efe4);overflow:hidden}
-      .book-page.right{background:linear-gradient(90deg,#f6ede2,#fffdf8)}
-      .book-page::after{content:"";position:absolute;inset:14px;border:1px solid rgba(185,148,93,.14);border-radius:14px;pointer-events:none}
-      .page-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:132px;gap:16px;height:100%}
-      .page-grid img{width:100%;height:100%;object-fit:cover;border:10px solid rgba(255,255,255,.84);box-shadow:0 14px 30px rgba(70,50,32,.12);filter:saturate(.96) contrast(1.02)}
-      .page-grid img:nth-child(1){grid-column:1/-1;transform:rotate(-1.5deg)}
-      .page-grid img:nth-child(2){transform:rotate(2deg)}
-      .page-grid img:nth-child(3){transform:rotate(-2deg)}
-      .featured-print{position:relative;z-index:2;height:100%;min-height:335px;padding:16px;border-radius:18px;background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(185,148,93,.12)}
-      .featured-print img{width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 16px 36px rgba(70,50,32,.14)}
+      .album-layout{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(28px,5vw,72px);align-items:center}
+      .album-copy-card{padding:clamp(30px,4vw,48px);border:1px solid var(--line);border-radius:34px;background:rgba(255,253,249,.82);box-shadow:0 18px 54px rgba(70,50,32,.08)}
+      .album-copy-card .tag{color:var(--gold);font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem}
+      .album-copy-card p{color:var(--muted);line-height:1.85;font-size:1.03rem}
+      .album-copy-card .album-poem{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);font-family:Georgia,"Times New Roman",serif;color:var(--ink);font-size:clamp(1.32rem,2vw,1.85rem);line-height:1.15;letter-spacing:-.03em}
+      .album-copy-card .album-small-note{margin-top:16px;color:var(--muted);line-height:1.75}
+      .album-preview{--album-cover:#6d4b34;position:relative;min-height:650px;padding:clamp(22px,4vw,48px);border:1px solid var(--line);border-radius:42px;background:radial-gradient(circle at 78% 8%,rgba(255,255,255,.88),transparent 30%),linear-gradient(145deg,#fffdf9,#f0dfca);box-shadow:var(--shadow);overflow:hidden}
+      .album-preview::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 14%,rgba(185,148,93,.10),transparent 28%),linear-gradient(90deg,rgba(255,255,255,.46),transparent 45%);pointer-events:none}
+      .album-preview::after{content:"";position:absolute;left:8%;right:8%;bottom:7%;height:60px;border-radius:50%;background:rgba(70,50,32,.18);filter:blur(20px);transform:rotate(-2deg)}
+      .book-scene{position:relative;z-index:2;display:grid;align-items:center;min-height:520px;perspective:1700px}
+      .memory-book{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:420px;border-radius:22px;background:var(--album-cover);box-shadow:0 34px 90px rgba(70,50,32,.26),inset 0 0 0 1px rgba(255,255,255,.18);transform:rotate(-3deg);overflow:hidden;transition:background .35s ease}
+      .memory-book::before{content:"";position:absolute;inset:0 50% 0 auto;width:26px;background:linear-gradient(90deg,rgba(40,25,14,.24),rgba(255,255,255,.62),rgba(40,25,14,.18));transform:translateX(50%);z-index:4}
+      .memory-book::after{content:"FM MOMENTS";position:absolute;right:24px;bottom:16px;color:rgba(255,253,249,.58);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.15rem,3vw,2.2rem);letter-spacing:.12em;text-transform:uppercase;z-index:5;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+      .book-page{position:relative;padding:24px;background:linear-gradient(90deg,#fffdf8,#f4eadf);overflow:hidden}
+      .book-page.right{background:linear-gradient(90deg,#efe2d3,#fffdf8)}
+      .book-page::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 24% 18%,rgba(185,148,93,.10),transparent 34%),repeating-linear-gradient(90deg,rgba(70,50,32,.018) 0 1px,transparent 1px 12px);opacity:.9}
+      .book-page::after{content:"";position:absolute;inset:14px;border:1px solid rgba(185,148,93,.15);border-radius:14px;pointer-events:none}
+      .page-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:128px;gap:14px;height:100%}
+      .page-grid .page-photo{position:relative;overflow:hidden;border:9px solid rgba(255,255,255,.86);background:#f8f0e7;box-shadow:0 14px 30px rgba(70,50,32,.12)}
+      .page-grid .page-photo:first-child{grid-column:1/-1;transform:rotate(-1.2deg)}
+      .page-grid .page-photo:nth-child(2){transform:rotate(1.4deg)}
+      .page-grid .page-photo:nth-child(3){transform:rotate(-1.4deg)}
+      .page-grid img{width:100%;height:100%;object-fit:contain;background:#f8f0e7;filter:saturate(.96) contrast(1.02)}
+      .featured-print{position:relative;z-index:2;height:100%;min-height:345px;padding:14px;border-radius:18px;background:rgba(255,255,255,.70);box-shadow:inset 0 0 0 1px rgba(185,148,93,.12)}
+      .featured-print img{width:100%;height:100%;object-fit:contain;background:#f8f0e7;border-radius:12px;box-shadow:0 16px 36px rgba(70,50,32,.14)}
       .album-slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;opacity:0;transform:translateX(18px) rotateY(-4deg);transition:opacity .75s ease,transform .75s ease;pointer-events:none}
       .album-slide.active{opacity:1;transform:translateX(0) rotateY(0)}
-      .album-caption{position:absolute;left:clamp(24px,5vw,56px);right:clamp(24px,5vw,56px);bottom:24px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border:1px solid rgba(185,148,93,.18);border-radius:999px;background:rgba(255,253,249,.82);backdrop-filter:blur(12px);box-shadow:0 16px 42px rgba(70,50,32,.12)}
+      .album-caption{position:absolute;left:clamp(24px,5vw,56px);right:clamp(24px,5vw,56px);bottom:24px;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border:1px solid rgba(185,148,93,.18);border-radius:999px;background:rgba(255,253,249,.84);backdrop-filter:blur(12px);box-shadow:0 16px 42px rgba(70,50,32,.12)}
       .album-caption strong{font-family:Georgia,"Times New Roman",serif;font-size:1.05rem;font-weight:500}
       .album-caption span{color:var(--muted);font-size:.9rem}
-      .album-dots{position:absolute;left:50%;bottom:76px;z-index:6;display:flex;gap:8px;transform:translateX(-50%)}
+      .album-dots{position:absolute;left:50%;bottom:78px;z-index:7;display:flex;gap:8px;transform:translateX(-50%)}
       .album-dot{width:8px;height:8px;border:0;border-radius:50%;padding:0;background:rgba(36,35,33,.22);cursor:pointer}
       .album-dot.active{width:24px;border-radius:999px;background:var(--ink)}
       .album-note{position:absolute;right:28px;top:28px;z-index:6;padding:10px 14px;border-radius:999px;color:var(--paper);background:rgba(36,35,33,.72);font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+      .album-colors{position:absolute;left:28px;top:28px;z-index:8;display:flex;flex-wrap:wrap;gap:9px;padding:10px;border:1px solid rgba(185,148,93,.20);border-radius:999px;background:rgba(255,253,249,.80);backdrop-filter:blur(12px);box-shadow:0 14px 34px rgba(70,50,32,.10)}
+      .album-color{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid rgba(36,35,33,.13);border-radius:999px;background:rgba(255,255,255,.74);color:var(--muted);cursor:pointer;font-size:.82rem;font-weight:800}
+      .album-color.active{border-color:var(--gold);color:var(--ink);background:#fffaf1}
+      .album-color::before{content:"";width:16px;height:16px;border-radius:50%;border:1px solid rgba(36,35,33,.16);background:var(--cover)}
+      .album-color[data-cover="#6d4b34"]{--cover:#6d4b34}.album-color[data-cover="#efe2d1"]{--cover:#efe2d1}.album-color[data-cover="#c9ad8b"]{--cover:#c9ad8b}.album-color[data-cover="#242321"]{--cover:#242321}
 
       .process-grid{grid-template-columns:repeat(4,1fr)}
       .process-card{padding:25px}
@@ -143,12 +153,12 @@
       .lightbox-prev,.lightbox-next{top:50%;width:46px;height:46px;transform:translateY(-50%);font-size:1.4rem}
       .lightbox-prev{left:-60px}.lightbox-next{right:-60px}
 
-      .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
-      .reveal.visible{opacity:1;transform:translateY(0)}
+      .reveal{opacity:1;transform:none;transition:opacity .75s ease,transform .75s ease}
+      .reveal.visible{opacity:1;transform:none}
       @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
-      @media (max-width:1080px){.hero,.album-layout{grid-template-columns:1fr}.album-preview{min-height:560px}.hero-collage{grid-template-rows:320px 220px}.experience-grid,.testimonial-grid{grid-template-columns:1fr 1fr}.process-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox-close{right:4px}}
-      @media (max-width:780px){.nav-toggle{display:inline-flex}.site-nav{position:absolute;top:76px;left:18px;right:18px;display:none;flex-direction:column;align-items:stretch;padding:18px;border-radius:24px;background:var(--paper);box-shadow:var(--shadow)}.site-nav.open{display:flex}.hero-collage,.experience-grid,.process-grid,.testimonial-grid,.stats-grid,.contact-steps{grid-template-columns:1fr}.hero-collage{grid-template-rows:420px 250px 250px}.hero-collage figure:first-child{grid-row:auto}.album-preview{padding:22px}.memory-book,.album-slide{grid-template-columns:1fr}.book-page.right{display:none}.memory-book{min-height:430px}.page-grid{grid-auto-rows:120px}.album-caption{align-items:flex-start;flex-direction:column;border-radius:24px}.album-dots{bottom:98px}.filter-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.filter-btn{white-space:nowrap}.site-footer{flex-direction:column}.whatsapp-float{padding:12px 15px}}
-      @media (max-width:540px){.hero{padding-top:34px}.hero-collage{grid-template-rows:360px 220px 220px}h1{font-size:clamp(2.65rem,16vw,4.2rem)}.masonry-gallery{columns:1}.album-preview{min-height:520px}.book-scene{min-height:430px}.memory-book{min-height:390px;transform:rotate(-1.5deg)}.book-page{padding:18px}.page-grid{gap:12px;grid-auto-rows:108px}.page-grid img{border-width:7px}.album-note{right:18px;top:18px}.portfolio-cta{align-items:stretch}.portfolio-cta .btn{width:100%}.contact{background-attachment:scroll}.hero-actions .btn,.contact-actions .btn{width:100%}}
+      @media (max-width:1080px){.hero,.album-layout{grid-template-columns:1fr}.album-preview{min-height:590px}.hero-collage{grid-template-rows:320px 220px}.experience-grid,.testimonial-grid{grid-template-columns:1fr 1fr}.process-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox-close{right:4px}}
+      @media (max-width:780px){.nav-toggle{display:inline-flex}.site-nav{position:absolute;top:76px;left:18px;right:18px;display:none;flex-direction:column;align-items:stretch;padding:18px;border-radius:24px;background:var(--paper);box-shadow:var(--shadow)}.site-nav.open{display:flex}.hero-collage,.experience-grid,.process-grid,.testimonial-grid,.stats-grid,.contact-steps{grid-template-columns:1fr}.hero-collage{grid-template-rows:420px 250px 250px}.hero-collage figure:first-child{grid-row:auto}.album-preview{padding:22px}.memory-book,.album-slide{grid-template-columns:1fr}.book-page.right{display:none}.memory-book{min-height:440px}.page-grid{grid-auto-rows:118px}.album-colors{position:static;margin-bottom:16px;border-radius:22px}.album-caption{align-items:flex-start;flex-direction:column;border-radius:24px}.album-dots{bottom:98px}.filter-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.filter-btn{white-space:nowrap}.site-footer{flex-direction:column}.whatsapp-float{padding:12px 15px}}
+      @media (max-width:540px){.hero{padding-top:34px}.hero-collage{grid-template-rows:360px 220px 220px}h1{font-size:clamp(2.65rem,16vw,4.2rem)}.masonry-gallery{columns:1}.album-preview{min-height:520px}.book-scene{min-height:430px}.memory-book{min-height:400px;transform:rotate(-1.5deg)}.book-page{padding:18px}.page-grid{gap:12px;grid-auto-rows:108px}.page-grid .page-photo{border-width:7px}.album-note{right:18px;top:18px}.portfolio-cta{align-items:stretch}.portfolio-cta .btn{width:100%}.contact{background-attachment:scroll}.hero-actions .btn,.contact-actions .btn{width:100%}}
     </style>
   </head>
 
@@ -261,29 +271,32 @@
       <section class="section soft-section" id="album">
         <div class="section-heading reveal">
           <p class="eyebrow">Albüm Kitabı</p>
-          <h2>Anılarınız kitabın içinde yaşayan güncel bir hikâyeye dönüşsün.</h2>
-          <p>Albüm alanını artık sabit paketler yerine, tüm portföy fotoğraflarının sırayla aktığı açık kitap tasarımına çevirdik. Sayfalar değiştikçe bebek, hamile, portre, aile ve doğal anlar aynı premium albüm diliyle gezilir.</p>
+          <h2>Anılarınız sayfa sayfa yaşayan bir albüme dönüşsün.</h2>
+          <p>Fotoğraflarınız, eski bir hatıra defterinin sayfalarında gezinir gibi sade ve sıcak bir albüm içinde akar. Her sayfa; bir bakış, bir gülümseme, bir dokunuş ve yıllar sonra yeniden hatırlanacak küçük bir hikâye taşır.</p>
         </div>
         <div class="album-layout">
           <article class="album-copy-card reveal">
-            <p class="tag">Kayan Albüm</p>
-            <h3>Fotoğraflar açık kitap sayfalarında otomatik değişir.</h3>
-            <p>Referanstaki gibi beyaz sayfa, yumuşak gölge ve gerçek albüm hissi kullanıldı. Her turda dört farklı kare görünür; böylece albüm bölümü hem anı duygusunu hem de güncel portföy akışını taşır.</p>
-            <ul>
-              <li>26 portföy fotoğrafının tamamı albüm içinde sırayla gezer</li>
-              <li>Sayfa içinde kolaj + büyük baskı düzeni birlikte kullanılır</li>
-              <li>Filtre ve lightbox kodu bozulmadan sadece albüm alanı geliştirildi</li>
-            </ul>
+            <p class="tag">Yaşayan Albüm</p>
+            <h3>Bir fotoğraf değil, hissi kalan bir hikâye.</h3>
+            <p>Albüm tasarımı; fotoğrafları sıkıştırmadan, nefes alan beyaz sayfalar ve yumuşak gölgelerle sunar. Kareler kitabın içinde sakin şekilde değişir; bebek, aile, portre ve doğal anlar aynı zarif akışta buluşur.</p>
+            <div class="album-poem">Sayfalar çevrildikçe anılar yeniden canlanır.</div>
+            <p class="album-small-note">Kapak rengi çekimin ruhuna göre seçilebilir: sıcak kahve, sade krem, doğal bej veya zamansız siyah.</p>
           </article>
           <div class="album-preview reveal" aria-label="Kayan açık albüm kitabı">
-            <span class="album-note">Canlı Albüm</span>
+            <div class="album-colors" aria-label="Albüm kapak renkleri">
+              <button class="album-color active" type="button" data-cover="#6d4b34">Kahve</button>
+              <button class="album-color" type="button" data-cover="#efe2d1">Krem</button>
+              <button class="album-color" type="button" data-cover="#c9ad8b">Bej</button>
+              <button class="album-color" type="button" data-cover="#242321">Siyah</button>
+            </div>
+            <span class="album-note">Hatıra Albümü</span>
             <div class="book-scene">
               <div class="memory-book" id="memoryBook" aria-live="polite"></div>
             </div>
             <div class="album-dots" id="albumDots" aria-label="Albüm sayfa göstergeleri"></div>
             <div class="album-caption" id="albumCaption">
               <strong>FM Moments Albüm</strong>
-              <span>Fotoğraflar otomatik değişir</span>
+              <span>Fotoğraflar albüm içinde akar</span>
             </div>
           </div>
         </div>
@@ -401,7 +414,7 @@
           <div class="album-slide active">
             <div class="book-page left">
               <div class="page-grid">
-                ${leftPhotos.map((item)=>`<img src="${item.src}" alt="${item.alt}" loading="lazy" />`).join("")}
+                ${leftPhotos.map((item)=>`<div class="page-photo"><img src="${item.src}" alt="${item.alt}" loading="lazy" /></div>`).join("")}
               </div>
             </div>
             <div class="book-page right">
@@ -411,7 +424,7 @@
         `;
         albumDots.innerHTML=albumPages.map((_,index)=>`<button class="album-dot ${index===activeAlbumPage?"active":""}" type="button" aria-label="${index+1}. albüm sayfası" data-page="${index}"></button>`).join("");
         albumCaption.querySelector("strong").textContent=featured.title;
-        albumCaption.querySelector("span").textContent=`${featured.category} • ${activeAlbumPage+1}/${albumPages.length} albüm sayfası`;
+        albumCaption.querySelector("span").textContent=`${featured.category} • Albüm sayfasında saklanan anı`;
       };
 
       const startAlbumTimer=()=>{
@@ -425,6 +438,15 @@
         renderAlbumPage(Number(dot.dataset.page));
         startAlbumTimer();
       });
+
+      document.querySelectorAll(".album-color").forEach((button)=>{
+        button.addEventListener("click",()=>{
+          document.querySelectorAll(".album-color").forEach((item)=>item.classList.remove("active"));
+          button.classList.add("active");
+          memoryBook?.style.setProperty("--album-cover",button.dataset.cover);
+        });
+      });
+
       renderAlbumPage(0);
       startAlbumTimer();
 
