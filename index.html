@@ -3,239 +3,550 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FM Moments | Natural Family Photography</title>
-  <meta name="description" content="FM Moments; aile, yenidoğan, bebek, portre, dış çekim ve doğal anları sade, şık ve samimi bir fotoğraf diliyle ölümsüzleştirir." />
+
+  <title>FM Moments | Natural Photography</title>
+  <meta name="description" content="FM Moments; aile, yenidoğan, bebek, portre ve doğal an fotoğrafçılığı." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#fbf7f1;
-      --paper:#fffdf8;
-      --soft:#efe5d8;
-      --soft2:#f6eee4;
-      --ink:#241f1b;
-      --muted:#74685f;
-      --accent:#b69168;
-      --accent-dark:#8d6f4d;
-      --line:rgba(36,31,27,.12);
-      --shadow:0 28px 80px rgba(55,43,32,.14);
-      --radius:30px;
+      --paper:#fffdf9;
+      --soft:#efe5d9;
+      --ink:#261f1a;
+      --muted:#75685d;
+      --accent:#a67c52;
+      --dark:#211915;
+      --line:rgba(38,31,26,.12);
+      --shadow:0 24px 70px rgba(38,31,26,.13);
+      --radius:28px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,.95), transparent 36%),
-        linear-gradient(180deg,#fffaf4 0%,var(--bg) 45%,#fffaf4 100%);
+      background:var(--bg);
       color:var(--ink);
-      font-family:"Inter",Arial,sans-serif;
+      font-family:Inter,Arial,sans-serif;
     }
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
-    .wrap{width:min(1180px,92vw);margin:auto}
+    .wrap{width:min(1200px,92vw);margin:auto}
 
     header{
-      position:sticky;top:0;z-index:100;
-      background:rgba(251,247,241,.88);
-      backdrop-filter:blur(18px);
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(251,247,241,.94);
+      backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
     .nav{
-      min-height:78px;
-      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
     }
-    .brand{display:flex;align-items:center;gap:14px}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
     .mark{
-      width:52px;height:52px;border-radius:50%;
-      display:grid;place-items:center;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.72);
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:1px solid var(--accent);
+      display:grid;
+      place-items:center;
       font-family:"Cormorant Garamond",serif;
-      font-size:22px;font-weight:700;
-      box-shadow:0 10px 30px rgba(55,43,32,.08);
+      font-size:23px;
+      color:var(--accent);
+      background:var(--paper);
     }
     .brand h1{
       margin:0;
       font-family:"Cormorant Garamond",serif;
-      font-size:32px;letter-spacing:.13em;line-height:.9;
+      font-size:31px;
+      letter-spacing:.12em;
+      line-height:1;
     }
-    .brand span span{
-      display:block;margin-top:9px;
-      font-size:10px;letter-spacing:.36em;text-transform:uppercase;
-      color:var(--muted);font-weight:800;
+    .brand small{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:10px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      font-weight:700;
     }
-    nav{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:14px;font-weight:800}
+    nav{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:700;
+    }
     nav a:hover{color:var(--ink)}
-
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-height:52px;padding:0 24px;border-radius:999px;
-      font-size:14px;font-weight:900;transition:.25s;
+    .nav-cta{
+      background:var(--accent);
+      color:white;
+      padding:13px 20px;
+      border-radius:12px;
     }
-    .btn-dark{background:var(--ink);color:white;box-shadow:0 16px 40px rgba(36,31,27,.16)}
-    .btn-light{background:rgba(255,255,255,.74);border:1px solid var(--line)}
-    .btn:hover{transform:translateY(-2px)}
 
-    .hero{padding:74px 0 80px}
-    .hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+    .hero{
+      padding:72px 0 92px;
+      background:
+        radial-gradient(circle at 80% 20%,rgba(166,124,82,.10),transparent 34%),
+        linear-gradient(180deg,#fffdf9 0%,var(--bg) 100%);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1.15fr;
+      gap:64px;
+      align-items:center;
+    }
     .eyebrow{
-      margin:0 0 18px;color:var(--accent-dark);
-      font-weight:900;letter-spacing:.36em;text-transform:uppercase;font-size:12px;
+      margin:0 0 20px;
+      color:var(--accent);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.32em;
+      text-transform:uppercase;
     }
-    h2,h3,h4{font-family:"Cormorant Garamond",serif;margin:0;line-height:.95;letter-spacing:-.035em}
-    .hero h2{font-size:clamp(48px,6vw,88px);max-width:720px}
-    .hero p,.lead,.about p,.service-card p,.faq p,.contact p{
-      color:var(--muted);line-height:1.85;font-size:16px;
+    h2,h3{
+      margin:0;
+      font-family:"Cormorant Garamond",serif;
+      line-height:.98;
+      letter-spacing:-.035em;
+      font-weight:600;
     }
-    .hero p{margin:28px 0 0;max-width:610px}
-    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-    .hero-note{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:13px;font-weight:800}
-    .hero-note span{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.48)}
+    .hero h2{
+      font-size:clamp(48px,5.3vw,78px);
+      max-width:620px;
+    }
+    .hero p{
+      max-width:560px;
+      margin:28px 0 0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:16px;
+    }
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:30px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 24px;
+      border-radius:999px;
+      font-weight:900;
+      border:1px solid var(--line);
+      background:var(--paper);
+    }
+    .btn-dark{
+      background:var(--ink);
+      color:white;
+      border-color:var(--ink);
+    }
 
-    .hero-photos{display:grid;grid-template-columns:1fr .95fr;gap:18px}
+    .hero-photos{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+    }
     .photo-card{
-      position:relative;overflow:hidden;border-radius:32px;background:var(--soft);
-      box-shadow:var(--shadow);isolation:isolate;
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      background:var(--soft);
+      box-shadow:var(--shadow);
     }
-    .photo-card img{width:100%;height:100%;object-fit:cover;transition:.8s}
-    .photo-card:hover img{transform:scale(1.035)}
-    .photo-card.main{height:600px}
-    .photo-stack{display:grid;gap:18px}
-    .photo-card.small{height:291px}
-    .tag{
-      position:absolute;left:16px;bottom:16px;z-index:2;
-      color:white;background:rgba(36,31,27,.62);backdrop-filter:blur(8px);
-      padding:9px 13px;border-radius:999px;font-size:12px;font-weight:900;
+    .photo-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .photo-main{height:560px}
+    .photo-stack{
+      display:grid;
+      gap:18px;
+    }
+    .photo-small{height:271px}
+    .label{
+      position:absolute;
+      left:16px;
+      bottom:16px;
+      background:rgba(38,31,26,.70);
+      color:white;
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
     }
 
-    section{padding:82px 0}
-    .section-head{display:grid;grid-template-columns:1fr minmax(280px,430px);gap:34px;align-items:end;margin-bottom:38px}
-    h3{font-size:clamp(38px,5vw,66px)}
+    section{padding:86px 0}
+    .section-head{
+      max-width:760px;
+      margin:0 auto 42px;
+      text-align:center;
+    }
+    .section-head h3{
+      font-size:clamp(38px,4.5vw,64px);
+    }
+    .lead{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:16px;
+      margin:20px auto 0;
+      max-width:720px;
+    }
 
-    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-    .about-img{border-radius:36px;overflow:hidden;background:var(--soft);box-shadow:var(--shadow)}
-    .about-img img{width:100%;height:620px;object-fit:cover;object-position:center}
-    .about-panel{background:rgba(255,253,248,.68);border:1px solid var(--line);border-radius:36px;padding:44px;box-shadow:0 20px 60px rgba(55,43,32,.06)}
-    .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
-    .mini{padding:18px;border-radius:20px;background:var(--soft2);border:1px solid var(--line)}
-    .mini b{display:block;font-size:22px;margin-bottom:4px}.mini span{color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .service-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:30px;
+      box-shadow:0 14px 44px rgba(38,31,26,.06);
+    }
+    .service-card h4{
+      margin:0 0 12px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      line-height:1;
+    }
+    .service-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:15px;
+    }
 
-    .portfolio{background:rgba(255,253,248,.52)}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-    .chip{padding:10px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--paper);font-weight:900;font-size:12px;letter-spacing:.04em}
-    .chip.active{background:var(--ink);color:white}
-    .gallery{columns:3 300px;column-gap:20px}
+    .portfolio{
+      background:#fffaf4;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      margin-bottom:30px;
+    }
+    .chip{
+      padding:10px 15px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .chip.active{
+      background:var(--ink);
+      color:white;
+    }
+
+    .gallery{
+      columns:3 300px;
+      column-gap:22px;
+    }
     .gallery-card{
-      display:inline-block;width:100%;break-inside:avoid;margin:0 0 20px;
-      border-radius:28px;overflow:hidden;background:var(--paper);
-      border:1px solid rgba(36,31,27,.09);box-shadow:0 18px 50px rgba(55,43,32,.10);
+      display:inline-block;
+      width:100%;
+      break-inside:avoid;
+      margin:0 0 22px;
+      border-radius:24px;
+      overflow:hidden;
+      background:var(--paper);
+      border:1px solid var(--line);
+      box-shadow:0 18px 52px rgba(38,31,26,.09);
     }
-    .gallery-card img{width:100%;height:auto;background:var(--soft)}
-    figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 16px;background:rgba(255,253,248,.96)}
-    figcaption strong{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1}
-    figcaption span{color:var(--accent-dark);font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;white-space:nowrap}
+    .gallery-card img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      background:var(--soft);
+    }
+    figcaption{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 15px;
+      background:var(--paper);
+    }
+    figcaption strong{
+      font-family:"Cormorant Garamond",serif;
+      font-size:20px;
+      line-height:1;
+    }
+    figcaption span{
+      color:var(--accent);
+      font-size:10px;
+      letter-spacing:.18em;
+      font-weight:900;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
 
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .service-card{padding:30px;border-radius:28px;background:var(--soft2);border:1px solid var(--line)}
-    .service-card h4{font-size:31px;margin-bottom:13px}
+    .album-section{
+      padding:0;
+      background:var(--bg);
+    }
+    .album-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      min-height:430px;
+      border-radius:0;
+      overflow:hidden;
+      background:var(--dark);
+    }
+    .album-text{
+      padding:72px min(6vw,74px);
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.08),transparent 32%),
+        linear-gradient(135deg,#2b201a,#17110e);
+    }
+    .album-text .eyebrow{color:#d8b98f}
+    .album-text h3{
+      font-size:clamp(38px,4vw,58px);
+      max-width:460px;
+    }
+    .album-text p{
+      color:rgba(255,255,255,.75);
+      line-height:1.85;
+      max-width:480px;
+      margin:22px 0 0;
+    }
+    .album-photo{
+      min-height:430px;
+      background:var(--soft);
+    }
+    .album-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-    .album{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .album-text{border-radius:34px;background:var(--ink);color:white;padding:50px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px}
-    .album-text p{color:rgba(255,255,255,.72)}
-    .album-img{border-radius:34px;overflow:hidden;background:var(--soft);box-shadow:var(--shadow)}
-    .album-img img{width:100%;height:100%;object-fit:cover}
-
-    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px}
-    .faq-list{display:grid;gap:12px}
-    details{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:21px}
-    summary{cursor:pointer;font-weight:900;color:var(--ink)}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:var(--line);
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      margin-top:70px;
+    }
+    .stat{
+      background:var(--paper);
+      padding:30px;
+      text-align:center;
+    }
+    .stat strong{
+      display:block;
+      font-size:30px;
+      margin-bottom:8px;
+    }
+    .stat span{
+      color:var(--muted);
+      font-size:14px;
+    }
 
     .contact-box{
-      border-radius:40px;padding:66px;min-height:480px;
-      display:flex;flex-direction:column;justify-content:center;
-      background:linear-gradient(90deg,rgba(36,31,27,.86),rgba(36,31,27,.48)),url("./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg") center/cover;
-      color:white;box-shadow:var(--shadow);
+      border-radius:34px;
+      padding:70px;
+      background:
+        linear-gradient(90deg,rgba(38,31,26,.84),rgba(38,31,26,.45)),
+        url("./10df2283-33fd-487b-8bbb-9202019a42f9.jpg") center/cover;
+      color:white;
+      box-shadow:var(--shadow);
     }
-    .contact-box p{color:rgba(255,255,255,.78);max-width:650px}
-    .contact-box .btn-light{background:white;color:var(--ink)}
-
-    footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);background:rgba(255,253,248,.72);font-size:14px;font-weight:700}
-    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
-    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:120;background:#1f8f57;color:white;padding:15px 20px;border-radius:999px;font-weight:900;box-shadow:0 16px 42px rgba(31,143,87,.34)}
-
-    @media(max-width:980px){
-      .hero-grid,.about,.section-head,.album,.faq-grid{grid-template-columns:1fr}
-      .services{grid-template-columns:1fr}.about-img img{height:auto}
+    .contact-box h3{
+      font-size:clamp(40px,5vw,68px);
+      max-width:700px;
     }
-    @media(max-width:720px){
-      nav{display:none}.brand h1{font-size:25px}.brand span span{font-size:9px}.hero{padding:48px 0 62px}.hero-photos{grid-template-columns:1fr}.photo-card.main,.photo-card.small{height:auto}.photo-card img{height:auto;object-fit:contain}.gallery{columns:1}.about-panel,.contact-box,.album-text{padding:30px}.mini-grid{grid-template-columns:1fr}.footer-row{flex-direction:column;align-items:flex-start}.whatsapp{right:14px;bottom:14px;padding:13px 16px}
+    .contact-box p{
+      color:rgba(255,255,255,.78);
+      line-height:1.85;
+      max-width:620px;
+      margin:22px 0 0;
+    }
+
+    footer{
+      padding:28px 0;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      background:var(--paper);
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      font-size:14px;
+    }
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:80;
+      background:#1f8f57;
+      color:white;
+      padding:15px 20px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 16px 42px rgba(31,143,87,.34);
+    }
+
+    @media(max-width:960px){
+      nav{display:none}
+      .hero-grid,
+      .album-wrap{
+        grid-template-columns:1fr;
+      }
+      .hero-photos{
+        grid-template-columns:1fr;
+      }
+      .photo-main,
+      .photo-small{
+        height:auto;
+      }
+      .photo-card img{
+        height:auto;
+        object-fit:contain;
+      }
+      .service-grid,
+      .stats{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:620px){
+      .brand h1{font-size:24px}
+      .hero{padding:50px 0 70px}
+      section{padding:64px 0}
+      .service-grid,
+      .stats{
+        grid-template-columns:1fr;
+      }
+      .gallery{columns:1}
+      .album-text,
+      .contact-box{
+        padding:38px 26px;
+      }
+      .footer-row{
+        flex-direction:column;
+      }
     }
   </style>
 </head>
 
 <body>
+
 <header>
   <div class="wrap nav">
-    <a href="#home" class="brand">
+    <a class="brand" href="#home">
       <span class="mark">FM</span>
       <span>
         <h1>FM MOMENTS</h1>
-        <span>Natural Photography</span>
+        <small>Natural Photography</small>
       </span>
     </a>
+
     <nav>
-      <a href="#about">Hakkımızda</a>
+      <a href="#services">Deneyim</a>
       <a href="#portfolio">Portföy</a>
-      <a href="#experience">Deneyim</a>
-      <a href="#faq">SSS</a>
-      <a href="#contact">İletişim</a>
+      <a href="#album">Albüm</a>
+      <a href="#contact" class="nav-cta">İletişime Geç</a>
     </nav>
   </div>
 </header>
 
 <main id="home">
+
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Aile • Yenidoğan • Bebek • Portre • Dış Çekim</p>
         <h2>Doğal anları zamansız hatıralara dönüştürüyoruz.</h2>
-        <p>FM Moments; ev sıcaklığında hazırlanan çekim alanları, dış mekân hikâyeleri ve samimi portrelerle ailelerin en özel anlarını sade, şık ve doğal bir dille anlatır.</p>
+        <p>
+          FM Moments; ev sıcaklığında hazırlanan çekim alanları, dış mekân hikâyeleri ve samimi portrelerle ailelerin en özel anlarını sade, şık ve doğal bir dille anlatır.
+        </p>
         <div class="actions">
           <a class="btn btn-dark" href="#portfolio">Portföyü Gör</a>
-          <a class="btn btn-light" href="https://wa.me/905555555555" target="_blank">WhatsApp ile İletişim</a>
-        </div>
-        <div class="hero-note">
-          <span>Doğal ışık</span><span>Sade konsept</span><span>Kişiye özel planlama</span>
+          <a class="btn" href="https://wa.me/905555555555" target="_blank">WhatsApp ile İletişim</a>
         </div>
       </div>
+
       <div class="hero-photos">
-        <div class="photo-card main"><img src="./10df2283-33fd-487b-8bbb-9202019a42f9.jpg" alt="Yenidoğan bebek çekimi"><span class="tag">Yenidoğan</span></div>
+        <div class="photo-card photo-main">
+          <img src="./10df2283-33fd-487b-8bbb-9202019a42f9.jpg" alt="Yenidoğan bebek fotoğrafı">
+          <span class="label">Yenidoğan</span>
+        </div>
+
         <div class="photo-stack">
-          <div class="photo-card small"><img src="./e2d8e203-fb47-4f3e-ad40-01a0d452bae4.jpg" alt="Bebek konsept çekimi"><span class="tag">Bebek</span></div>
-          <div class="photo-card small"><img src="./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg" alt="Dış çekim"><span class="tag">Dış Çekim</span></div>
+          <div class="photo-card photo-small">
+            <img src="./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg" alt="Bebek konsept fotoğrafı">
+            <span class="label">Bebek</span>
+          </div>
+
+          <div class="photo-card photo-small">
+            <img src="./5a4979c3-d2b7-4dbc-8094-0a99b01c2481.jpg" alt="Portre fotoğrafı">
+            <span class="label">Portre</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="wrap about">
-      <div class="about-img"><img src="./06fe02b2-d528-466a-a2a2-62822b204f1c.jpg" alt="FM Moments portre çekimi"></div>
-      <div class="about-panel">
-        <p class="eyebrow">FM Moments Hakkında</p>
-        <h3>Şık, sade ve samimi bir fotoğraf deneyimi.</h3>
-        <p>FM Moments fiziksel bir stüdyo vaadiyle değil; evde hazırlanabilen sıcak çekim köşeleri, doğal ışık, dış mekân ve gerçek duygular üzerine kurulu butik bir fotoğraf hizmetidir.</p>
-        <p>Poz vermekten çok an yaşamaya odaklanan çekim anlayışıyla; yenidoğan, aile, bebek, portre, dış çekim ve doğal anları zamansız karelere dönüştürür.</p>
-        <div class="mini-grid">
-          <div class="mini"><b>01</b><span>Planlama</span></div>
-          <div class="mini"><b>02</b><span>Çekim</span></div>
-          <div class="mini"><b>03</b><span>Teslim</span></div>
-        </div>
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Çekim Deneyimi</p>
+        <h3>Her çekim; konsept, lokasyon ve hikâyeye göre planlanır.</h3>
+        <p class="lead">
+          Sade, sıcak ve doğal bir fotoğraf diliyle; yenidoğan, bebek, aile, portre ve dış çekim süreçleri kişiye özel hazırlanır.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <h4>Yenidoğan & Bebek</h4>
+          <p>Ev sıcaklığında sade setler, doğal ışık ve bebeğin ritmine uygun rahat bir çekim akışı.</p>
+        </article>
+
+        <article class="service-card">
+          <h4>Aile</h4>
+          <p>Aile ve çift anıları için samimi, zarif ve duygusal kareler.</p>
+        </article>
+
+        <article class="service-card">
+          <h4>Dış Çekim & Portre</h4>
+          <p>Dış mekânda veya doğal ışıkta sade kompozisyonlarla güçlü portreler.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -243,73 +554,149 @@
   <section id="portfolio" class="portfolio">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <p class="eyebrow">Portföy Galerisi</p>
-          <h3>Fotoğraflar doğal oranıyla, temiz ve profesyonel görünür.</h3>
-        </div>
-        <p class="lead">Galeri masonry/Pinterest yapısındadır. Görseller kırpılmadan kendi oranında akar; başlıklar fotoğraf içeriğine göre güvenli şekilde düzenlenmiştir.</p>
+        <p class="eyebrow">Portföy</p>
+        <h3>Doğal, sade ve zamansız kareler.</h3>
+        <p class="lead">
+          Galeride sadece marka kimliğine uygun; bebek, aile, portre ve doğal an fotoğrafları kullanıldı.
+        </p>
       </div>
 
       <div class="chips">
-        <span class="chip active">Tümü</span><span class="chip">Aile</span><span class="chip">Yenidoğan</span><span class="chip">Bebek</span><span class="chip">Portre</span><span class="chip">Dış Çekim</span><span class="chip">Doğal An</span>
+        <span class="chip active">Tümü</span>
+        <span class="chip">Yenidoğan</span>
+        <span class="chip">Bebek</span>
+        <span class="chip">Aile</span>
+        <span class="chip">Portre</span>
+        <span class="chip">Dış Çekim</span>
       </div>
 
       <div class="gallery">
-        <figure class="gallery-card"><img src="./10df2283-33fd-487b-8bbb-9202019a42f9.jpg" alt="Yenidoğan bebek portresi"><figcaption><strong>Bebek Portresi</strong><span>Yenidoğan</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./6513ac4d-12a0-489e-bf86-19d4bd8b197d.jpg" alt="Aile ve bebek çekimi"><figcaption><strong>Aile Anısı</strong><span>Aile</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./fe65f183-e9c3-4a07-80ce-e2682472b596.jpg" alt="Bebek detay çekimi"><figcaption><strong>Zarif Bebek Detayı</strong><span>Bebek</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./51ee664c-a8f0-4af0-8b2e-615e03f44ce3.jpg" alt="Bebek konsept çekimi"><figcaption><strong>Bebek Konsepti</strong><span>Bebek</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./b6bd6969-92f9-482c-b09d-4d95c0eaf056.jpg" alt="Doğal bebek anı"><figcaption><strong>Doğal Bebek Anı</strong><span>Bebek</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./e2d8e203-fb47-4f3e-ad40-01a0d452bae4.jpg" alt="Özel gün bebek konsepti"><figcaption><strong>Özel Gün Konsepti</strong><span>Bebek</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./e6bfc52b-fad1-47f6-972e-129cacebfd9b.jpg" alt="Mutlu bebek anı"><figcaption><strong>Mutlu Bebek Anı</strong><span>Bebek</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./0d24c774-22bf-4854-8151-0eead9fc207f.jpg" alt="Doğal portre çekimi"><figcaption><strong>Doğal Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./7fdf042e-2451-478d-ab58-09f49f4440ae.jpg" alt="Aile portresi"><figcaption><strong>Sade Aile Portresi</strong><span>Aile</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg" alt="Dış çekim portresi"><figcaption><strong>Dış Çekim</strong><span>Dış Çekim</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./e9290b2e-32f4-4b16-870c-1d6f8d5a1962.jpg" alt="Dış mekân portresi"><figcaption><strong>Dış Mekân Anısı</strong><span>Dış Çekim</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./df215954-62d3-4790-9102-37a2a3988589.jpg" alt="Siyah beyaz portre"><figcaption><strong>Siyah Beyaz Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./7706e214-9592-45d0-9d80-50e50eff07e0.jpg" alt="Fine art portre"><figcaption><strong>Fine Art Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./8a77aa72-cd5e-4210-b1e4-4bd69930c00f.jpg" alt="Editorial portre"><figcaption><strong>Editorial Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./5a4979c3-d2b7-4dbc-8094-0a99b01c2481.jpg" alt="Doğal portre"><figcaption><strong>Doğal Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./e48cdbd6-58ac-405f-9a82-e0c746b01a86.jpg" alt="Karakter portresi"><figcaption><strong>Karakter Portresi</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./c38010d1-5085-4ac2-bb53-2ea9ff461492.jpg" alt="Minimal portre"><figcaption><strong>Minimal Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./9bc951b7-2868-47c3-86f6-ea8cf0fdd626.jpg" alt="Profil portre"><figcaption><strong>Profil Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./06fe02b2-d528-466a-a2a2-62822b204f1c.jpg" alt="Portre çalışması"><figcaption><strong>Portre Çalışması</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./fd91cf2a-3ab2-4270-b569-9f8b537a8cf3.jpg" alt="Doğal an çekimi"><figcaption><strong>Doğal An</strong><span>Doğal An</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./3b440ddb-a3e4-47d0-9411-75de238cd09a.jpg" alt="Grup portresi"><figcaption><strong>Grup Portresi</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./9ad51b07-add3-4f42-b2c5-0cc539ca0966.jpg" alt="Samimi an"><figcaption><strong>Samimi An</strong><span>Doğal An</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./74bb58c2-8212-4579-aa3b-0f467365d60b.jpg" alt="Doğal portre"><figcaption><strong>Doğal Portre</strong><span>Doğal An</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./6efdfda2-f476-4198-994b-b030d15a1a1a.jpg" alt="Doğal an"><figcaption><strong>Doğal An</strong><span>Doğal An</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./5b161f94-b3a2-42dc-ac4c-ca27b97db764.jpg" alt="Belgesel portre"><figcaption><strong>Belgesel Portre</strong><span>Portre</span></figcaption></figure>
-        <figure class="gallery-card"><img src="./66c838b3-fe27-41e2-9c5e-272633990a6c.jpg" alt="Doğal an"><figcaption><strong>Doğal An</strong><span>Doğal An</span></figcaption></figure>
+
+        <figure class="gallery-card">
+          <img src="./10df2283-33fd-487b-8bbb-9202019a42f9.jpg" alt="Yenidoğan bebek" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Yenidoğan Anı</strong><span>Yenidoğan</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./6513ac4d-12a0-489e-bf86-19d4bd8b197d.jpg" alt="Anne ve bebek" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Anne & Bebek</strong><span>Aile</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./fe65f183-e9c3-4a07-80ce-e2682472b596.jpg" alt="Bebek detayı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Bebek Detayı</strong><span>Bebek</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./51ee664c-a8f0-4af0-8b2e-615e03f44ce3.jpg" alt="Bebek konsepti" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Bebek Konsepti</strong><span>Bebek</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./b6bd6969-92f9-482c-b09d-4d95c0eaf056.jpg" alt="Doğal bebek anı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Doğal Bebek Anı</strong><span>Bebek</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./e2d8e203-fb47-4f3e-ad40-01a0d452bae4.jpg" alt="Bebek özel gün konsepti" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Özel Gün Konsepti</strong><span>Bebek</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./e6bfc52b-fad1-47f6-972e-129cacebfd9b.jpg" alt="Mutlu bebek anı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Mutlu Bebek Anı</strong><span>Bebek</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg" alt="Bebek fotoğrafı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Bebek Portresi</strong><span>Bebek</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./0d24c774-22bf-4854-8151-0eead9fc207f.jpg" alt="Aile fotoğrafı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Aile Hikâyesi</strong><span>Aile</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./e9290b2e-32f4-4b16-870c-1d6f8d5a1962.jpg" alt="Dış çekim fotoğrafı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Dış Çekim</strong><span>Dış Çekim</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./df215954-62d3-4790-9102-37a2a3988589.jpg" alt="Dış çekim portre" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Dış Mekân Portresi</strong><span>Dış Çekim</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./7706e214-9592-45d0-9d80-50e50eff07e0.jpg" alt="Portre fotoğrafı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Fine Art Portre</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./8a77aa72-cd5e-4210-b1e4-4bd69930c00f.jpg" alt="Portre fotoğrafı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Editorial Portre</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./5a4979c3-d2b7-4dbc-8094-0a99b01c2481.jpg" alt="Doğal portre" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Doğal Portre</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./e48cdbd6-58ac-405f-9a82-e0c746b01a86.jpg" alt="Karakter portresi" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Karakter Portresi</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./c38010d1-5085-4ac2-bb53-2ea9ff461492.jpg" alt="Portre" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Sade Portre</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./9bc951b7-2868-47c3-86f6-ea8cf0fdd626.jpg" alt="Profil portre" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Profil Portre</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./06fe02b2-d528-466a-a2a2-62822b204f1c.jpg" alt="Portre fotoğrafı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Doğal An</strong><span>Portre</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="./66c838b3-fe27-41e2-9c5e-272633990a6c.jpg" alt="Doğal aile anı" onerror="this.closest('figure').remove()">
+          <figcaption><strong>Samimi An</strong><span>Aile</span></figcaption>
+        </figure>
+
       </div>
     </div>
   </section>
 
-  <section id="experience">
+  <section id="album" class="album-section">
+    <div class="album-wrap">
+      <div class="album-text">
+        <p class="eyebrow">Albüm & Baskı</p>
+        <h3>Anılarınız sadece telefonda kalmasın.</h3>
+        <p>
+          Seçilen kareler; isteğe bağlı olarak albüm, çerçeve veya baskı seti şeklinde özenle hazırlanabilir.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#contact">Detaylı Bilgi Al</a>
+        </div>
+      </div>
+
+      <div class="album-photo">
+        <img src="./6513ac4d-12a0-489e-bf86-19d4bd8b197d.jpg" alt="Albüm ve baskı örneği" onerror="this.closest('.album-photo').style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">Çekim Deneyimi</p><h3>Her çekim hikâyeye göre planlanır.</h3></div>
-        <p class="lead">Süre, lokasyon, konsept ve teslim kapsamı kişiye özel belirlenir. Amaç; sade, temiz ve yıllar sonra da değerini koruyan kareler üretmektir.</p>
-      </div>
-      <div class="services">
-        <article class="service-card"><h4>Yenidoğan & Bebek</h4><p>Ev sıcaklığında sade setler, doğal ışık ve bebeğin ritmine uygun rahat bir çekim akışı.</p></article>
-        <article class="service-card"><h4>Aile & Portre</h4><p>Aile, çift ve bireysel portrelerde samimi, zarif ve doğal kareler.</p></article>
-        <article class="service-card"><h4>Dış Çekim</h4><p>Dış mekânda gerçek anlar, doğal ışık ve sade kompozisyonlarla güçlü hikâyeler.</p></article>
-      </div>
-      <div class="album">
-        <div class="album-text"><p class="eyebrow">Albüm & Baskı</p><h3>Anılarınız sadece telefonda kalmasın.</h3><p>Seçilen kareler isteğe bağlı olarak albüm, çerçeve veya baskı seti şeklinde hazırlanabilir.</p></div>
-        <div class="album-img"><img src="./7fdf042e-2451-478d-ab58-09f49f4440ae.jpg" alt="Albüm ve baskı hizmeti"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap faq-grid">
-      <div><p class="eyebrow">SSS</p><h3>Sık sorulanlar</h3></div>
-      <div class="faq-list">
-        <details open><summary>Çekimler nerede yapılıyor?</summary><p>Evde hazırlanabilen doğal setlerde, dış mekânda veya çekime uygun seçilen lokasyonlarda yapılabilir.</p></details>
-        <details><summary>Fiyatlar neden sitede yok?</summary><p>Her çekim; süre, lokasyon, konsept ve teslim kapsamına göre farklı planlandığı için teklif kişiye özel hazırlanır.</p></details>
-        <details><summary>Fotoğraflar kırpılmadan görülebilir mi?</summary><p>Evet. Portföy galerisi fotoğrafların kendi oranını koruyan masonry yapısıyla hazırlanmıştır.</p></details>
+      <div class="stats">
+        <div class="stat"><strong>150+</strong><span>Mutlu Aile</span></div>
+        <div class="stat"><strong>7+</strong><span>Yıllık Deneyim</span></div>
+        <div class="stat"><strong>1000+</strong><span>Tamamlanan Çekim</span></div>
+        <div class="stat"><strong>%100</strong><span>Doğal ve Samimi Anlar</span></div>
       </div>
     </div>
   </section>
@@ -319,14 +706,17 @@
       <div class="contact-box">
         <p class="eyebrow">İletişim</p>
         <h3>FM Moments ile hikâyenizi birlikte planlayalım.</h3>
-        <p>Çekim türünüzü, tarih beklentinizi ve lokasyon tercihinizi yazın; size en uygun akışı birlikte oluşturalım.</p>
+        <p>
+          Çekim türünüzü, tarih beklentinizi ve lokasyon tercihinizi yazın; size en uygun çekim akışını birlikte oluşturalım.
+        </p>
         <div class="actions">
-          <a class="btn btn-light" href="https://wa.me/905555555555" target="_blank">WhatsApp ile Yaz</a>
-          <a class="btn btn-light" href="https://instagram.com/fmmoments" target="_blank">Instagram</a>
+          <a class="btn" href="https://wa.me/905555555555" target="_blank">WhatsApp ile Yaz</a>
+          <a class="btn" href="https://instagram.com/fmmoments" target="_blank">Instagram</a>
         </div>
       </div>
     </div>
   </section>
+
 </main>
 
 <a class="whatsapp" href="https://wa.me/905555555555" target="_blank">WhatsApp</a>
@@ -334,8 +724,9 @@
 <footer>
   <div class="wrap footer-row">
     <span>© 2026 FM Moments</span>
-    <span>Aile • Yenidoğan • Bebek • Portre • Dış Çekim • Doğal Anlar</span>
+    <span>Aile • Yenidoğan • Bebek • Portre • Dış Çekim</span>
   </div>
 </footer>
+
 </body>
 </html>
