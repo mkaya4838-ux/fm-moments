@@ -124,6 +124,74 @@
       .album-color::before{content:"";width:16px;height:16px;border-radius:50%;border:1px solid rgba(36,35,33,.16);background:var(--cover)}
       .album-color[data-cover="#6d4b34"]{--cover:#6d4b34}.album-color[data-cover="#efe2d1"]{--cover:#efe2d1}.album-color[data-cover="#c9ad8b"]{--cover:#c9ad8b}.album-color[data-cover="#242321"]{--cover:#242321}
 
+
+      .album-preview{
+        --album-cover:#8a5a35;
+        --album-page:#fff7ec;
+        --album-edge:#d8b88f;
+        transition:background .35s ease;
+      }
+
+      .album-preview.cover-kahve{
+        --album-cover:#8a5a35;
+        --album-page:#fff7ec;
+        --album-edge:#6b3f22;
+      }
+
+      .album-preview.cover-krem{
+        --album-cover:#efe3d0;
+        --album-page:#fffaf2;
+        --album-edge:#cbb89e;
+      }
+
+      .album-preview.cover-bej{
+        --album-cover:#c8aa83;
+        --album-page:#fff6e9;
+        --album-edge:#9b7b55;
+      }
+
+      .album-preview.cover-siyah{
+        --album-cover:#24211f;
+        --album-page:#f7f1e8;
+        --album-edge:#161412;
+      }
+
+      .memory-book{
+        background:
+          linear-gradient(90deg,var(--album-cover),var(--album-page) 15%,var(--album-page) 85%,var(--album-cover)) !important;
+        border:14px solid var(--album-cover) !important;
+        box-shadow:
+          0 28px 80px rgba(70,50,32,.24),
+          inset 0 0 0 1px rgba(255,255,255,.25) !important;
+        transition:background .35s ease,border-color .35s ease;
+      }
+
+      .book-page{
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.07),transparent 12%),
+          var(--album-page) !important;
+      }
+
+      .book-page.right{
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.10),transparent 16%),
+          var(--album-page) !important;
+      }
+
+      .album-preview::after{
+        content:"";
+        position:absolute;
+        left:8%;
+        right:8%;
+        top:18%;
+        height:22px;
+        border-radius:999px;
+        background:var(--album-edge);
+        opacity:.35;
+        filter:blur(10px);
+        pointer-events:none;
+      }
+
       .process-grid{grid-template-columns:repeat(4,1fr)}
       .process-card{padding:25px}
       .process-card span{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:18px;border-radius:50%;color:var(--paper);background:var(--ink);letter-spacing:0}
@@ -219,7 +287,7 @@
         <div class="section-heading centered reveal">
           <p class="eyebrow">Portföy</p>
           <h2>Doğal, sade ve zamansız kareler.</h2>
-          <p>Galeride 26 fotoğraf kırpılmadan doğal oranlarında akar. Kategorilerle bebek, aile, hamile, portre, doğal ve dış çekim örneklerini kolayca inceleyebilirsiniz.</p>
+          <p>Galeride fotoğraflar doğal oranlarında, sade ve akıcı bir düzenle sunulur. Kategorilerle bebek, aile, portre, doğal an ve dış çekim örneklerini kolayca inceleyebilirsiniz.</p>
         </div>
         <div class="filter-bar reveal" aria-label="Portföy filtreleri">
           <button class="filter-btn active" type="button" data-filter="all">Tümü</button>
@@ -282,12 +350,12 @@
             <div class="album-poem">Sayfalar çevrildikçe anılar yeniden canlanır.</div>
             <p class="album-small-note">Kapak rengi çekimin ruhuna göre seçilebilir: sıcak kahve, sade krem, doğal bej veya zamansız siyah.</p>
           </article>
-          <div class="album-preview reveal" aria-label="Kayan açık albüm kitabı">
+          <div class="album-preview reveal cover-kahve" aria-label="Kayan açık albüm kitabı">
             <div class="album-colors" aria-label="Albüm kapak renkleri">
-              <button class="album-color active" type="button" data-cover="#6d4b34">Kahve</button>
-              <button class="album-color" type="button" data-cover="#efe2d1">Krem</button>
-              <button class="album-color" type="button" data-cover="#c9ad8b">Bej</button>
-              <button class="album-color" type="button" data-cover="#242321">Siyah</button>
+              <button class="album-color active" type="button" data-cover="kahve" style="--cover-color:#8a5a35">Kahve</button>
+              <button class="album-color" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
+              <button class="album-color" type="button" data-cover="bej" style="--cover-color:#c8aa83">Bej</button>
+              <button class="album-color" type="button" data-cover="siyah" style="--cover-color:#24211f">Siyah</button>
             </div>
             <span class="album-note">Hatıra Albümü</span>
             <div class="book-scene">
@@ -503,6 +571,19 @@
         if(event.key==="Escape") closeLightbox();
         if(event.key==="ArrowLeft") showLightboxItem(-1);
         if(event.key==="ArrowRight") showLightboxItem(1);
+      });
+
+
+      const albumPreviewBox=document.querySelector(".album-preview");
+      const albumColorButtons=document.querySelectorAll(".album-color");
+      albumColorButtons.forEach((button)=>{
+        button.addEventListener("click",()=>{
+          albumColorButtons.forEach((item)=>item.classList.remove("active"));
+          button.classList.add("active");
+
+          albumPreviewBox?.classList.remove("cover-kahve","cover-krem","cover-bej","cover-siyah");
+          albumPreviewBox?.classList.add(`cover-${button.dataset.cover}`);
+        });
       });
 
       const revealItems=document.querySelectorAll(".reveal");
