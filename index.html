@@ -645,6 +645,69 @@
       @media (max-width:1080px){.hero,.album-layout{grid-template-columns:1fr}.album-preview{min-height:590px}.hero-collage{grid-template-rows:320px 220px}.experience-grid,.testimonial-grid{grid-template-columns:1fr 1fr}.process-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox-close{right:4px}}
       @media (max-width:780px){.nav-toggle{display:inline-flex}.site-nav{position:absolute;top:76px;left:18px;right:18px;display:none;flex-direction:column;align-items:stretch;padding:18px;border-radius:24px;background:var(--paper);box-shadow:var(--shadow)}.site-nav.open{display:flex}.hero-collage,.experience-grid,.process-grid,.testimonial-grid,.stats-grid,.contact-steps{grid-template-columns:1fr}.hero-collage{grid-template-rows:420px 250px 250px}.hero-collage figure:first-child{grid-row:auto}.album-preview{padding:22px}.memory-book,.album-slide{grid-template-columns:1fr}.book-page.right{display:none}.memory-book{min-height:440px}.page-grid{grid-auto-rows:118px}.album-colors{position:static;margin-bottom:16px;border-radius:22px}.album-caption{align-items:flex-start;flex-direction:column;border-radius:24px}.album-dots{bottom:98px}.filter-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.filter-btn{white-space:nowrap}.site-footer{flex-direction:column}.whatsapp-float{padding:12px 15px}}
       @media (max-width:540px){.hero{padding-top:34px}.hero-collage{grid-template-rows:360px 220px 220px}h1{font-size:clamp(2.65rem,16vw,4.2rem)}.masonry-gallery{columns:1}.album-preview{min-height:520px}.book-scene{min-height:430px}.memory-book{min-height:400px;transform:rotate(-1.5deg)}.book-page{padding:18px}.page-grid{gap:12px;grid-auto-rows:108px}.page-grid .page-photo{border-width:7px}.album-note{right:18px;top:18px}.portfolio-cta{align-items:stretch}.portfolio-cta .btn{width:100%}.contact{background-attachment:scroll}.hero-actions .btn,.contact-actions .btn{width:100%}}
+    
+      /* =========================================================
+         FINAL HARD FIX - ALBÜM RENKLERİ + LIGHTBOX
+      ========================================================= */
+      .album-preview{
+        --album-cover:#efe3d0;
+        --album-page:#fffaf2;
+        --album-edge:#d8c2a7;
+      }
+
+      .album-preview.cover-krem{--album-cover:#efe3d0;--album-page:#fffaf2;--album-edge:#d8c2a7}
+      .album-preview.cover-bej{--album-cover:#c8aa83;--album-page:#fff6e9;--album-edge:#9d7c55}
+      .album-preview.cover-antrasit{--album-cover:#3a3a3d;--album-page:#f2f0ec;--album-edge:#232326}
+      .album-preview.cover-acikgri{--album-cover:#d9d9d9;--album-page:#fafafa;--album-edge:#bdbdbd}
+      .album-preview.cover-beyaz{--album-cover:#ffffff;--album-page:#fffdf8;--album-edge:#dddddd}
+      .album-preview.cover-koyu{--album-cover:#1f1b18;--album-page:#f2ede5;--album-edge:#0f0d0b}
+      .album-preview.cover-turkuaz{--album-cover:#5f9f98;--album-page:#f2fbf9;--album-edge:#3e6f69}
+
+      .album-preview .memory-book{
+        background:
+          linear-gradient(90deg,
+            var(--album-cover) 0%,
+            var(--album-page) 16%,
+            var(--album-page) 84%,
+            var(--album-cover) 100%
+          ) !important;
+        border:14px solid var(--album-cover) !important;
+        box-shadow:
+          0 28px 80px rgba(70,50,32,.24),
+          inset 0 0 0 1px rgba(255,255,255,.28) !important;
+      }
+
+      .album-preview .book-page,
+      .album-preview .book-page.right{
+        background:
+          linear-gradient(90deg,rgba(70,50,32,.07),transparent 12%),
+          var(--album-page) !important;
+      }
+
+      .album-color{
+        cursor:pointer !important;
+        user-select:none;
+      }
+
+      .album-color.active{
+        border-color:#b9945d !important;
+        background:#fffaf1 !important;
+        color:#242321 !important;
+        box-shadow:0 8px 22px rgba(0,0,0,.10) !important;
+      }
+
+      .lightbox{
+        z-index:999999 !important;
+      }
+
+      .lightbox.open{
+        display:flex !important;
+      }
+
+      .photo-trigger{
+        cursor:pointer !important;
+      }
+
     </style>
   </head>
 
@@ -776,13 +839,13 @@
           <div class="album-preview reveal cover-krem" aria-label="Açık albüm kitabı">
             <div class="album-color-panel">
               <div class="album-colors" aria-label="Albüm kapak renkleri">
-                <button class="album-color krem active" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
-                <button class="album-color bej" type="button" data-cover="bej" style="--cover-color:#c8aa83">Bej</button>
-                <button class="album-color antrasit" type="button" data-cover="antrasit" style="--cover-color:#3a3a3d">Antrasit</button>
-                <button class="album-color acikgri" type="button" data-cover="acikgri" style="--cover-color:#d9d9d9">Açık Gri</button>
-                <button class="album-color beyaz" type="button" data-cover="beyaz" style="--cover-color:#ffffff">Beyaz</button>
-                <button class="album-color koyu" type="button" data-cover="koyu" style="--cover-color:#1f1b18">Koyu</button>
-                <button class="album-color turkuaz" type="button" data-cover="turkuaz" style="--cover-color:#5f9f98">Turkuaz Yeşil</button>
+                <button class="album-color active" type="button" data-cover="krem" style="--cover-color:#efe3d0">Krem</button>
+                <button class="album-color" type="button" data-cover="bej" style="--cover-color:#c8aa83">Bej</button>
+                <button class="album-color" type="button" data-cover="antrasit" style="--cover-color:#3a3a3d">Antrasit</button>
+                <button class="album-color" type="button" data-cover="acikgri" style="--cover-color:#d9d9d9">Açık Gri</button>
+                <button class="album-color" type="button" data-cover="beyaz" style="--cover-color:#ffffff">Beyaz</button>
+                <button class="album-color" type="button" data-cover="koyu" style="--cover-color:#1f1b18">Koyu</button>
+                <button class="album-color" type="button" data-cover="turkuaz" style="--cover-color:#5f9f98">Turkuaz Yeşil</button>
               </div>
             </div>
 
@@ -892,249 +955,217 @@
     </footer>
 
     <script>
-      const navToggle=document.querySelector(".nav-toggle");
-      const nav=document.querySelector(".site-nav");
-      navToggle?.addEventListener("click",()=>{
-        const isOpen=nav.classList.toggle("open");
-        navToggle.setAttribute("aria-expanded",String(isOpen));
-      });
-      nav?.querySelectorAll("a").forEach((link)=>{
-        link.addEventListener("click",()=>{
-          nav.classList.remove("open");
-          navToggle?.setAttribute("aria-expanded","false");
+      document.addEventListener("DOMContentLoaded", function(){
+        /* ---------- Mobil Menü ---------- */
+        const navToggle=document.querySelector(".nav-toggle");
+        const nav=document.querySelector(".site-nav");
+
+        navToggle?.addEventListener("click",()=>{
+          const isOpen=nav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded",String(isOpen));
         });
-      });
 
-      const filterButtons=document.querySelectorAll(".filter-btn");
-      const photoCards=[...document.querySelectorAll(".photo-card")];
-      });
-
-      document.querySelectorAll(".album-color").forEach((button)=>{
-        button.addEventListener("click",()=>{
-          document.querySelectorAll(".album-color").forEach((item)=>item.classList.remove("active"));
-          button.classList.add("active");
-          memoryBook?.style.setProperty("--album-cover",button.dataset.cover);
-        });
-      });
-
-      renderAlbumPage(0);
-      startAlbumTimer();
-
-      filterButtons.forEach((button)=>{
-        button.addEventListener("click",()=>{
-          const filter=button.dataset.filter;
-          filterButtons.forEach((item)=>item.classList.toggle("active",item===button));
-          photoCards.forEach((card)=>{
-            const categories=card.dataset.category.split(" ");
-            card.classList.toggle("is-hidden",filter!=="all"&&!categories.includes(filter));
+        nav?.querySelectorAll("a").forEach((link)=>{
+          link.addEventListener("click",()=>{
+            nav.classList.remove("open");
+            navToggle?.setAttribute("aria-expanded","false");
           });
         });
-      });
 
+        /* ---------- Filtre ---------- */
+        const filterButtons=document.querySelectorAll(".filter-btn");
 
-      const lightbox=document.querySelector(".lightbox");
-      const lightboxImage=lightbox?.querySelector("img");
-      const lightboxTitle=lightbox?.querySelector(".lightbox-caption strong");
-      const lightboxCategory=lightbox?.querySelector(".lightbox-caption span");
-      const lightboxClose=lightbox?.querySelector(".lightbox-close");
-      const lightboxPrev=lightbox?.querySelector(".lightbox-prev");
-      const lightboxNext=lightbox?.querySelector(".lightbox-next");
+        filterButtons.forEach((button)=>{
+          button.addEventListener("click",()=>{
+            const filter=button.dataset.filter;
+            filterButtons.forEach((item)=>item.classList.toggle("active",item===button));
 
-      let currentIndex=0;
+            document.querySelectorAll(".photo-card").forEach((card)=>{
+              const categories=(card.dataset.category||"").split(" ");
+              card.classList.toggle("is-hidden",filter!=="all"&&!categories.includes(filter));
+            });
+          });
+        });
 
-      const getPhotoCards=()=>[...document.querySelectorAll(".photo-card")];
-      const visibleCards=()=>getPhotoCards().filter((card)=>!card.classList.contains("is-hidden"));
+        /* ---------- Albüm Renkleri ---------- */
+        const albumPreview=document.querySelector(".album-preview");
+        const memoryBook=document.querySelector("#memoryBook");
 
-      const openLightbox=(card)=>{
-        if(!lightbox || !lightboxImage) return;
+        const themes={
+          krem:{cover:"#efe3d0",page:"#fffaf2",edge:"#d8c2a7"},
+          bej:{cover:"#c8aa83",page:"#fff6e9",edge:"#9d7c55"},
+          antrasit:{cover:"#3a3a3d",page:"#f2f0ec",edge:"#232326"},
+          acikgri:{cover:"#d9d9d9",page:"#fafafa",edge:"#bdbdbd"},
+          beyaz:{cover:"#ffffff",page:"#fffdf8",edge:"#dddddd"},
+          koyu:{cover:"#1f1b18",page:"#f2ede5",edge:"#0f0d0b"},
+          turkuaz:{cover:"#5f9f98",page:"#f2fbf9",edge:"#3e6f69"}
+        };
 
-        const cards=visibleCards();
-        currentIndex=cards.indexOf(card);
+        function setAlbumColor(name){
+          const t=themes[name]||themes.krem;
 
-        const image=card.querySelector("img");
-        const button=card.querySelector("button");
+          document.querySelectorAll(".album-color").forEach((btn)=>{
+            btn.classList.toggle("active",btn.dataset.cover===name);
+          });
 
-        if(!image || !button) return;
+          albumPreview?.classList.remove(
+            "cover-krem","cover-bej","cover-antrasit",
+            "cover-acikgri","cover-beyaz","cover-koyu","cover-turkuaz"
+          );
+          albumPreview?.classList.add("cover-"+name);
 
-        lightboxImage.src=image.currentSrc||image.src;
-        lightboxImage.alt=image.alt||"FM Moments fotoğraf";
-        if(lightboxTitle) lightboxTitle.textContent=button.dataset.title||card.querySelector("strong")?.textContent||"FM Moments";
-        if(lightboxCategory) lightboxCategory.textContent=button.dataset.category||card.querySelector("figcaption span")?.textContent||"Fotoğraf";
+          albumPreview?.style.setProperty("--album-cover",t.cover);
+          albumPreview?.style.setProperty("--album-page",t.page);
+          albumPreview?.style.setProperty("--album-edge",t.edge);
 
-        lightbox.classList.add("open");
-        document.body.style.overflow="hidden";
-      };
-
-      const showLightboxItem=(direction)=>{
-        const cards=visibleCards();
-        if(!cards.length) return;
-        currentIndex=(currentIndex+direction+cards.length)%cards.length;
-        openLightbox(cards[currentIndex]);
-      };
-
-      const closeLightbox=()=>{
-        if(!lightbox || !lightboxImage) return;
-        lightbox.classList.remove("open");
-        lightboxImage.src="";
-        document.body.style.overflow="";
-      };
-
-      document.addEventListener("click",(event)=>{
-        const trigger=event.target.closest(".photo-trigger");
-        if(!trigger) return;
-
-        const card=trigger.closest(".photo-card");
-        if(card) openLightbox(card);
-      });
-
-      lightboxClose?.addEventListener("click",closeLightbox);
-      lightboxPrev?.addEventListener("click",()=>showLightboxItem(-1));
-      lightboxNext?.addEventListener("click",()=>showLightboxItem(1));
-
-      lightbox?.addEventListener("click",(event)=>{
-        if(event.target===lightbox) closeLightbox();
-      });
-
-      document.addEventListener("keydown",(event)=>{
-        if(!lightbox?.classList.contains("open")) return;
-        if(event.key==="Escape") closeLightbox();
-        if(event.key==="ArrowLeft") showLightboxItem(-1);
-        if(event.key==="ArrowRight") showLightboxItem(1);
-      });
-
-      });
-      });
-      },4200);
-
-      updateAlbumPhotos();
-
-
-
-      /* =========================
-         ALBÜM RENKLERİ VE FOTO AKIŞI
-      ========================= */
-      const albumColorMap={
-        krem:{cover:"#efe3d0",page:"#fffaf2",edge:"#d8c2a7"},
-        bej:{cover:"#c8aa83",page:"#fff6e9",edge:"#9d7c55"},
-        antrasit:{cover:"#3a3a3d",page:"#f2f0ec",edge:"#232326"},
-        acikgri:{cover:"#d9d9d9",page:"#fafafa",edge:"#bdbdbd"},
-        beyaz:{cover:"#ffffff",page:"#fffdf8",edge:"#dddddd"},
-        koyu:{cover:"#1f1b18",page:"#f2ede5",edge:"#0f0d0b"},
-        turkuaz:{cover:"#5f9f98",page:"#f2fbf9",edge:"#3e6f69"}
-      };
-
-      const albumPreviewBox=document.querySelector(".album-preview");
-      const memoryBookBox=document.querySelector("#memoryBook");
-
-      const applyAlbumColor=(name)=>{
-        const theme=albumColorMap[name]||albumColorMap.krem;
+          if(memoryBook){
+            memoryBook.style.setProperty("--album-cover",t.cover);
+            memoryBook.style.setProperty("--album-page",t.page);
+            memoryBook.style.background=`linear-gradient(90deg, ${t.cover} 0%, ${t.page} 16%, ${t.page} 84%, ${t.cover} 100%)`;
+            memoryBook.style.borderColor=t.cover;
+          }
+        }
 
         document.querySelectorAll(".album-color").forEach((button)=>{
-          button.classList.toggle("active",button.dataset.cover===name);
+          button.addEventListener("click",()=>{
+            setAlbumColor(button.dataset.cover);
+          });
         });
 
-        albumPreviewBox?.classList.remove(
-          "cover-krem",
-          "cover-bej",
-          "cover-antrasit",
-          "cover-acikgri",
-          "cover-beyaz",
-          "cover-koyu",
-          "cover-turkuaz"
-        );
+        setAlbumColor("krem");
 
-        albumPreviewBox?.classList.add(`cover-${name}`);
-        albumPreviewBox?.style.setProperty("--album-cover",theme.cover);
-        albumPreviewBox?.style.setProperty("--album-page",theme.page);
-        albumPreviewBox?.style.setProperty("--album-edge",theme.edge);
+        /* ---------- Albüm Foto Akışı ---------- */
+        const albumSets=[
+          {
+            title:"Yenidoğan Anı",
+            text:"Sade ışık ve yumuşak tonlarla hatıra albümüne taşınan bebek kareleri.",
+            photos:[
+              "./10df2283-33fd-487b-8bbb-9202019a42f9.jpg",
+              "./51ee664c-a8f0-4af0-8b2e-615e03f44ce3.jpg",
+              "./fe65f183-e9c3-4a07-80ce-e2682472b596.jpg",
+              "./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg"
+            ]
+          },
+          {
+            title:"Çift Anısı",
+            text:"Birlikte paylaşılan anlar, doğal ve zamansız albüm sayfalarında saklanır.",
+            photos:[
+              "./e9290b2e-32f4-4b16-870c-1d6f8d5a1962.jpg",
+              "./fd91cf2a-3ab2-4270-b569-9f8b537a8cf3.jpg",
+              "./9ad51b07-add3-4f42-b2c5-0cc539ca0966.jpg",
+              "./df215954-62d3-4790-9102-37a2a3988589.jpg"
+            ]
+          },
+          {
+            title:"Portre Seçkisi",
+            text:"Portre fotoğrafları ferah boşluklarla, sade ve güçlü bir albüm diliyle sunulur.",
+            photos:[
+              "./8a77aa72-cd5e-4210-b1e4-4bd69930c00f.jpg",
+              "./5a4979c3-d2b7-4dbc-8094-0a99b01c2481.jpg",
+              "./7706e214-9592-45d0-9d80-50e50eff07e0.jpg",
+              "./e48cdbd6-58ac-405f-9a82-e0c746b01a86.jpg"
+            ]
+          }
+        ];
 
-        if(memoryBookBox){
-          memoryBookBox.style.setProperty("--album-cover",theme.cover);
-          memoryBookBox.style.setProperty("--album-page",theme.page);
-          memoryBookBox.style.borderColor=theme.cover;
-          memoryBookBox.style.background=`linear-gradient(90deg, ${theme.cover}, ${theme.page} 15%, ${theme.page} 85%, ${theme.cover})`;
+        const albumImgs=[
+          document.querySelector("#albumImg1"),
+          document.querySelector("#albumImg2"),
+          document.querySelector("#albumImg3"),
+          document.querySelector("#albumImg4")
+        ];
+        const albumTitle=document.querySelector("#albumTitle");
+        const albumText=document.querySelector("#albumText");
+        let albumIndex=0;
+
+        function updateAlbum(){
+          const set=albumSets[albumIndex];
+          albumImgs.forEach((img,i)=>{
+            if(img && set.photos[i]) img.src=set.photos[i];
+          });
+          if(albumTitle) albumTitle.textContent=set.title;
+          if(albumText) albumText.textContent=set.text;
         }
-      };
 
-      document.addEventListener("click",(event)=>{
-        const button=event.target.closest(".album-color");
-        if(!button) return;
-        applyAlbumColor(button.dataset.cover);
+        updateAlbum();
+        setInterval(()=>{
+          albumIndex=(albumIndex+1)%albumSets.length;
+          updateAlbum();
+        },4200);
+
+        /* ---------- Lightbox ---------- */
+        const lightbox=document.querySelector(".lightbox");
+        const lightboxImg=lightbox?.querySelector("img");
+        const lightboxTitle=lightbox?.querySelector(".lightbox-caption strong");
+        const lightboxCategory=lightbox?.querySelector(".lightbox-caption span");
+        const closeBtn=lightbox?.querySelector(".lightbox-close");
+        const prevBtn=lightbox?.querySelector(".lightbox-prev");
+        const nextBtn=lightbox?.querySelector(".lightbox-next");
+        let currentIndex=0;
+
+        function getVisibleCards(){
+          return [...document.querySelectorAll(".photo-card")].filter(card=>!card.classList.contains("is-hidden"));
+        }
+
+        function openLightbox(card){
+          if(!lightbox || !lightboxImg || !card) return;
+
+          const visible=getVisibleCards();
+          currentIndex=visible.indexOf(card);
+
+          const img=card.querySelector("img");
+          const btn=card.querySelector(".photo-trigger");
+          const title=btn?.dataset.title || card.querySelector("strong")?.textContent || "FM Moments";
+          const category=btn?.dataset.category || card.querySelector("figcaption span")?.textContent || "Fotoğraf";
+
+          if(!img) return;
+
+          lightboxImg.src=img.currentSrc || img.src;
+          lightboxImg.alt=img.alt || title;
+          if(lightboxTitle) lightboxTitle.textContent=title;
+          if(lightboxCategory) lightboxCategory.textContent=category;
+
+          lightbox.classList.add("open");
+          document.body.style.overflow="hidden";
+        }
+
+        function closeLightbox(){
+          if(!lightbox || !lightboxImg) return;
+          lightbox.classList.remove("open");
+          lightboxImg.src="";
+          document.body.style.overflow="";
+        }
+
+        function showLightbox(direction){
+          const visible=getVisibleCards();
+          if(!visible.length) return;
+          currentIndex=(currentIndex+direction+visible.length)%visible.length;
+          openLightbox(visible[currentIndex]);
+        }
+
+        document.addEventListener("click",(event)=>{
+          const trigger=event.target.closest(".photo-trigger");
+          if(!trigger) return;
+          const card=trigger.closest(".photo-card");
+          openLightbox(card);
+        });
+
+        closeBtn?.addEventListener("click",closeLightbox);
+        prevBtn?.addEventListener("click",()=>showLightbox(-1));
+        nextBtn?.addEventListener("click",()=>showLightbox(1));
+
+        lightbox?.addEventListener("click",(event)=>{
+          if(event.target===lightbox) closeLightbox();
+        });
+
+        document.addEventListener("keydown",(event)=>{
+          if(!lightbox?.classList.contains("open")) return;
+          if(event.key==="Escape") closeLightbox();
+          if(event.key==="ArrowLeft") showLightbox(-1);
+          if(event.key==="ArrowRight") showLightbox(1);
+        });
       });
-
-      const albumSets=[
-        {
-          title:"Yenidoğan Anı",
-          text:"Sade ışık ve yumuşak tonlarla hatıra albümüne taşınan bebek kareleri.",
-          photos:[
-            "./10df2283-33fd-487b-8bbb-9202019a42f9.jpg",
-            "./51ee664c-a8f0-4af0-8b2e-615e03f44ce3.jpg",
-            "./fe65f183-e9c3-4a07-80ce-e2682472b596.jpg",
-            "./67722b02-3dd9-4b9c-96ca-ffc995e53c36.jpg"
-          ]
-        },
-        {
-          title:"Çift Anısı",
-          text:"Birlikte paylaşılan anlar, doğal ve zamansız albüm sayfalarında saklanır.",
-          photos:[
-            "./e9290b2e-32f4-4b16-870c-1d6f8d5a1962.jpg",
-            "./fd91cf2a-3ab2-4270-b569-9f8b537a8cf3.jpg",
-            "./9ad51b07-add3-4f42-b2c5-0cc539ca0966.jpg",
-            "./df215954-62d3-4790-9102-37a2a3988589.jpg"
-          ]
-        },
-        {
-          title:"Portre Seçkisi",
-          text:"Portre fotoğrafları ferah boşluklarla, sade ve güçlü bir albüm diliyle sunulur.",
-          photos:[
-            "./8a77aa72-cd5e-4210-b1e4-4bd69930c00f.jpg",
-            "./5a4979c3-d2b7-4dbc-8094-0a99b01c2481.jpg",
-            "./7706e214-9592-45d0-9d80-50e50eff07e0.jpg",
-            "./e48cdbd6-58ac-405f-9a82-e0c746b01a86.jpg"
-          ]
-        }
-      ];
-
-      const albumImgs=[
-        document.querySelector("#albumImg1"),
-        document.querySelector("#albumImg2"),
-        document.querySelector("#albumImg3"),
-        document.querySelector("#albumImg4")
-      ];
-      const albumTitle=document.querySelector("#albumTitle");
-      const albumText=document.querySelector("#albumText");
-      let albumSetIndex=0;
-
-      const updateAlbumPhotos=()=>{
-        const set=albumSets[albumSetIndex];
-        albumImgs.forEach((img,index)=>{
-          if(img && set.photos[index]){
-            img.src=set.photos[index];
-          }
-        });
-        if(albumTitle) albumTitle.textContent=set.title;
-        if(albumText) albumText.textContent=set.text;
-      };
-
-      window.setInterval(()=>{
-        albumSetIndex=(albumSetIndex+1)%albumSets.length;
-        updateAlbumPhotos();
-      },4200);
-
-      applyAlbumColor("krem");
-      updateAlbumPhotos();
-
-
-      const revealItems=document.querySelectorAll(".reveal");
-      const observer=new IntersectionObserver((entries)=>{
-        entries.forEach((entry)=>{
-          if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },{threshold:.12});
-      revealItems.forEach((item)=>observer.observe(item));
     </script>
+
   </body>
 </html>
